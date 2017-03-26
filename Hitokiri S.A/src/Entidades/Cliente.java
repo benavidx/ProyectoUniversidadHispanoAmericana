@@ -3,19 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hitokiri.s.a;
+package Entidades;
 
 /**
  *
  * @author Antonio
  */
-public class HitokiriSA {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+public class Cliente {
     
+    private String Nombre, Apellido1, Apellido2, FechaDeNacimiento, Direccion,Profesion;
+    private int Cedula, Carnet;
+    boolean Estado, Genero;
 }
