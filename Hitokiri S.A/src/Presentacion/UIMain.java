@@ -237,6 +237,11 @@ public class UIMain extends javax.swing.JFrame {
         });
 
         jButton1.setText("Ingresar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -349,6 +354,12 @@ public class UIMain extends javax.swing.JFrame {
     private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged
         Mover(evt);
     }//GEN-LAST:event_jPanel2MouseDragged
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.setVisible(false);
+        ManagerShop Manager = new ManagerShop();
+        Manager.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
     
     private void setCurrentLocation(MouseEvent evt) {
         x = evt.getX();
