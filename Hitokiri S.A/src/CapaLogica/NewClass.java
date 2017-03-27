@@ -10,4 +10,6 @@ package CapaLogica;
  */
 public class NewClass {
     
+    
+    // Edicion solo para que el Git lo detecte diferente
 }
