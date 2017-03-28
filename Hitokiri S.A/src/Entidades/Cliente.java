@@ -15,7 +15,7 @@ public class Cliente {
     private int Cedula, Carnet;
     boolean Estado, Genero;
 
-      public Cliente(String Nombre, String Apellido1, String Apellido2, String FechaDeNacimiento, String Direccion, String Profesion, int Cedula, int Carnet, boolean Estado, boolean Genero) {
+    public Cliente(String Nombre, String Apellido1, String Apellido2, String FechaDeNacimiento, String Direccion, String Profesion, int Cedula, int Carnet, boolean Estado, boolean Genero) {
         this.Nombre = Nombre;
         this.Apellido1 = Apellido1;
         this.Apellido2 = Apellido2;
