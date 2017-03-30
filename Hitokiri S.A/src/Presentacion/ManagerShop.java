@@ -65,9 +65,9 @@ public class ManagerShop extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255)));
 
-        jPanel9.setBackground(new java.awt.Color(1, 177, 202));
+        jPanel9.setBackground(new java.awt.Color(0, 98, 175));
 
-        jPanel2.setBackground(new java.awt.Color(1, 177, 202));
+        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 jPanel2MouseDragged(evt);
@@ -131,8 +131,8 @@ public class ManagerShop extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 391, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
@@ -158,7 +158,7 @@ public class ManagerShop extends javax.swing.JFrame {
         jPanelMenus.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 0, 204)));
         jPanelMenus.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Clientes.setBackground(new java.awt.Color(0, 204, 153));
+        Clientes.setBackground(new java.awt.Color(0, 98, 175));
         Clientes.setRequestFocusEnabled(false);
 
         javax.swing.GroupLayout ClientesLayout = new javax.swing.GroupLayout(Clientes);
@@ -174,7 +174,7 @@ public class ManagerShop extends javax.swing.JFrame {
 
         jPanelMenus.add(Clientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        RRHH.setBackground(new java.awt.Color(0, 204, 0));
+        RRHH.setBackground(new java.awt.Color(0, 98, 175));
 
         javax.swing.GroupLayout RRHHLayout = new javax.swing.GroupLayout(RRHH);
         RRHH.setLayout(RRHHLayout);
@@ -189,7 +189,7 @@ public class ManagerShop extends javax.swing.JFrame {
 
         jPanelMenus.add(RRHH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        Inventario.setBackground(new java.awt.Color(153, 0, 153));
+        Inventario.setBackground(new java.awt.Color(0, 98, 175));
         Inventario.setPreferredSize(new java.awt.Dimension(890, 100));
 
         javax.swing.GroupLayout InventarioLayout = new javax.swing.GroupLayout(Inventario);
@@ -205,7 +205,7 @@ public class ManagerShop extends javax.swing.JFrame {
 
         jPanelMenus.add(Inventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        Reservacion.setBackground(new java.awt.Color(255, 0, 51));
+        Reservacion.setBackground(new java.awt.Color(0, 98, 175));
         Reservacion.setPreferredSize(new java.awt.Dimension(890, 100));
 
         javax.swing.GroupLayout ReservacionLayout = new javax.swing.GroupLayout(Reservacion);
@@ -221,7 +221,7 @@ public class ManagerShop extends javax.swing.JFrame {
 
         jPanelMenus.add(Reservacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        Historico.setBackground(new java.awt.Color(255, 255, 0));
+        Historico.setBackground(new java.awt.Color(0, 98, 175));
         Historico.setPreferredSize(new java.awt.Dimension(890, 100));
 
         javax.swing.GroupLayout HistoricoLayout = new javax.swing.GroupLayout(Historico);
@@ -237,7 +237,7 @@ public class ManagerShop extends javax.swing.JFrame {
 
         jPanelMenus.add(Historico, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        Disponibilidad.setBackground(new java.awt.Color(0, 51, 51));
+        Disponibilidad.setBackground(new java.awt.Color(0, 98, 175));
         Disponibilidad.setPreferredSize(new java.awt.Dimension(890, 100));
 
         javax.swing.GroupLayout DisponibilidadLayout = new javax.swing.GroupLayout(Disponibilidad);
@@ -253,7 +253,7 @@ public class ManagerShop extends javax.swing.JFrame {
 
         jPanelMenus.add(Disponibilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        Session.setBackground(new java.awt.Color(0, 204, 204));
+        Session.setBackground(new java.awt.Color(0, 98, 175));
         Session.setPreferredSize(new java.awt.Dimension(890, 100));
 
         javax.swing.GroupLayout SessionLayout = new javax.swing.GroupLayout(Session);
@@ -359,9 +359,7 @@ public class ManagerShop extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelSession, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
