@@ -45,7 +45,7 @@ public class CargarTXTDA {
         for (int i = 0; i < files.length; i++) {
             switch (i){
                 case 0:
-                    rellenarListas(files[i]);
+                    rellenarListas(files[i], new Cliente());
                 break;
                 case 1:
                      rellenarListas(files[i]);
@@ -63,7 +63,7 @@ public class CargarTXTDA {
         }
     }
     
-    private void rellenarListas(String file){
+    private void rellenarListas(String file, Object j){
         try {
             BufferedReader bf = new BufferedReader(new FileReader(new File(file)));
             String temp = "";
