@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import CapaDeDatos.CargarTXT;
+import CapaDeDatos.CargarTXTDA;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.MouseEvent;
@@ -36,12 +36,27 @@ public class UIMain extends javax.swing.JFrame {
         } catch (UnsupportedLookAndFeelException ex) {
             Logger.getLogger(UIMain.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
         initComponents();
         setLocationRelativeTo(null);
     }
             private boolean NormalState = true;
             private int x,y;
+   
+    private boolean VerificarTxt() {
+        String Usuarios = System.getProperty("java.io.tmpdir") + "Usuarios.txt";
+        String Empleados = System.getProperty("java.io.tmpdir") + "Empleados.txt";
+        String Clientes = System.getProperty("java.io.tmpdir") + "Clientes.txt";
+        String Peliculas = System.getProperty("java.io.tmpdir") + "Peliculas.txt";
+        String Vacaciones = System.getProperty("java.io.tmpdir") + "Vacaciones.txt";
+            
+        if (!new java.io.File(Usuarios).exists() || !new java.io.File(Empleados).exists() || !new java.io.File(Clientes).exists() || !new java.io.File(Peliculas).exists() || !new java.io.File(Vacaciones).exists()) {
+            CargarTxtUI CargarTxtUI =new CargarTxtUI();
+            CargarTxtUI.setVisible(true);
+            CargarTxtUI.setLocationRelativeTo(null);
+            return false;
+        }
+        return true;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -240,9 +255,9 @@ public class UIMain extends javax.swing.JFrame {
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/LOGO.png"))); // NOI18N
 
         jButton1.setText("Ingresar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
             }
         });
 
@@ -309,12 +324,7 @@ public class UIMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel5MouseEntered
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-        CargarTXT ct = new CargarTXT();
-        try {
-            ct.getUsuarios();
-        } catch (IOException ex) {
-            Logger.getLogger(UIMain.class.getName()).log(Level.SEVERE, null, ex);
-        }
+
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -345,11 +355,12 @@ public class UIMain extends javax.swing.JFrame {
         Mover(evt);
     }//GEN-LAST:event_jPanel2MouseDragged
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+                
         this.setVisible(false);
         ManagerShop Manager = new ManagerShop();
         Manager.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButton1MouseClicked
     
     private void setCurrentLocation(MouseEvent evt) {
         x = evt.getX();
@@ -391,7 +402,7 @@ public class UIMain extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UIMain().setVisible(true);
+                new UIMain().setVisible(new UIMain().VerificarTxt());
             }
         });
     }
