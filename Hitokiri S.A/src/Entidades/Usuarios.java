@@ -14,13 +14,13 @@ public class Usuarios {
     private int identificador;
     private boolean Bloqueado, Estado;
 
-     public Usuarios(String Usuario, String Contraseña, String FechaDeIngreso, int identificador, boolean Bloqueado, boolean Estado) {
-        this.Usuario = Usuario;
-        this.Contraseña = Contraseña;
-        this.FechaDeIngreso = FechaDeIngreso;
-        this.identificador = identificador;
-        this.Bloqueado = Bloqueado;
-        this.Estado = Estado;
+     public Usuarios(String[] ObjectList) {
+        this.Usuario = ObjectList[0];
+        this.Contraseña = ObjectList[1];
+        this.FechaDeIngreso = ObjectList[2];
+        this.identificador = Integer.parseInt(ObjectList[3]);
+        this.Bloqueado = Boolean.parseBoolean(ObjectList[4]);
+        this.Estado = Boolean.parseBoolean(ObjectList[5]);
     }
 
     public Usuarios() {

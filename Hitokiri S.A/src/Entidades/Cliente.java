@@ -15,17 +15,17 @@ public class Cliente {
     private int Cedula, Carnet;
     boolean Estado, Genero;
 
-    public Cliente(String Nombre, String Apellido1, String Apellido2, String FechaDeNacimiento, String Direccion, String Profesion, int Cedula, int Carnet, boolean Estado, boolean Genero) {
-        this.Nombre = Nombre;
-        this.Apellido1 = Apellido1;
-        this.Apellido2 = Apellido2;
-        this.FechaDeNacimiento = FechaDeNacimiento;
-        this.Direccion = Direccion;
-        this.Profesion = Profesion;
-        this.Cedula = Cedula;
-        this.Carnet = Carnet;
-        this.Estado = Estado;
-        this.Genero = Genero;
+    public Cliente(String[] ObjList) {
+        this.Nombre = ObjList[0];
+        this.Apellido1 = ObjList[1];
+        this.Apellido2 = ObjList[2];
+        this.FechaDeNacimiento = ObjList[3];
+        this.Direccion = ObjList[4];
+        this.Profesion = ObjList[5];
+        this.Cedula = Integer.parseInt(ObjList[6]);
+        this.Carnet = Integer.parseInt(ObjList[7]);
+        this.Estado = Boolean.parseBoolean(ObjList[8]);
+        this.Genero = Boolean.parseBoolean(ObjList[9]);
     }
 
     public Cliente() {

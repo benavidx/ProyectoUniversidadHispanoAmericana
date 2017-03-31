@@ -45,33 +45,50 @@ public class CargarTXTDA {
         for (int i = 0; i < files.length; i++) {
             switch (i){
                 case 0:
-                    rellenarListas(files[i], new Cliente());
+                    rellenarListas(files[i],0,ObjEmpleados);
                 break;
                 case 1:
-                     rellenarListas(files[i]);
+                     rellenarListas(files[i],1,ObjClientes);
                 break;
                 case 2:
-                     rellenarListas(files[i]);
+                     rellenarListas(files[i],2,ObjUsuarios);
                 break;
                 case 3:
-                     rellenarListas(files[i]);
+                     rellenarListas(files[i],3,ObjPeliculas);
                 break;
                 case 4:
-                     rellenarListas(files[i]);
+                     rellenarListas(files[i],4,ObjVacaciones);
                 break;
             }
         }
     }
     
-    private void rellenarListas(String file, Object j){
+    private void rellenarListas(String file,int ObjType, ArrayList ObjArrayList){   
+        
         try {
             BufferedReader bf = new BufferedReader(new FileReader(new File(file)));
-            String temp = "";
-            String bfRead;
+            String bfRead="";
             while((bfRead = bf.readLine()) != null){
-                temp += bfRead;
+                    switch(ObjType){
+                        case 0:
+                            ObjArrayList.add(new Empleado(bfRead.split(";")));
+                        break;
+                        case 1:
+                            ObjArrayList.add(new Cliente(bfRead.split(";")));
+                        break;
+                        case 2:
+                            ObjArrayList.add(new Usuarios(bfRead.split(";")));
+                        break;
+                        case 3:
+                            ObjArrayList.add(new Peliculas(bfRead.split(";")));
+                        break;
+                        case 4:
+                            ObjArrayList.add(new Vacaciones(bfRead.split(";")));
+                        break;
+
+                    }
             }
-            Object[] lista = temp.split(";");
+            
         } catch (IOException ex) {
             Logger.getLogger(CargarTXTDA.class.getName()).log(Level.SEVERE, null, ex);
         }

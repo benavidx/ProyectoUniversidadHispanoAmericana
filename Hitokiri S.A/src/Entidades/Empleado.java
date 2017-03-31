@@ -14,14 +14,14 @@ public class Empleado {
     private int Cedula, Identificador;
     private boolean Estado;
     
-      public Empleado(String Nombre, String Apellido1, String Apellido2, String FechaDeIngreso, int Cedula, int Identificador, boolean Estado) {
-        this.Nombre = Nombre;
-        this.Apellido1 = Apellido1;
-        this.Apellido2 = Apellido2;
-        this.FechaDeIngreso = FechaDeIngreso;
-        this.Cedula = Cedula;
-        this.Identificador = Identificador;
-        this.Estado = Estado;
+      public Empleado(String[] ObjectList) {
+        this.Nombre = ObjectList[0];
+        this.Apellido1 = ObjectList[1];
+        this.Apellido2 = ObjectList[2];
+        this.FechaDeIngreso = ObjectList[3];
+        this.Cedula = Integer.parseInt(ObjectList[4]);
+        this.Identificador = Integer.parseInt(ObjectList[5]);
+        this.Estado = Boolean.parseBoolean(ObjectList[6]);
     }
 
     public Empleado() {

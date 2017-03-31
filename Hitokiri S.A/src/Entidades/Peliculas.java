@@ -10,23 +10,23 @@ package Entidades;
  * @author Antonio
  */
 public class Peliculas {
-    private String Descripcion;
+    private String Descripcion,Genero;
     private int IdPeliculas, cantidad;
-    private boolean Genero, Estado;
+    private boolean Estado;
 
-     public Peliculas(String Descripcion, int IdPeliculas, int cantidad, boolean Genero, boolean Estado) {
-        this.Descripcion = Descripcion;
-        this.IdPeliculas = IdPeliculas;
-        this.cantidad = cantidad;
-        this.Genero = Genero;
-        this.Estado = Estado;
+     public Peliculas(String[] ObjectList) {
+        this.Descripcion = ObjectList[0];
+        this.IdPeliculas = Integer.parseInt(ObjectList[1]);
+        this.cantidad = Integer.parseInt(ObjectList[2]);
+        this.Genero = ObjectList[3];
+        this.Estado = Boolean.parseBoolean(ObjectList[4]);
     }
 
     public Peliculas() {
          this.Descripcion = "";
         this.IdPeliculas = 0;
         this.cantidad = 0;
-        this.Genero = false;
+        this.Genero = "";
         this.Estado = false;
     }
 
@@ -54,11 +54,11 @@ public class Peliculas {
         this.cantidad = cantidad;
     }
 
-    public boolean isGenero() {
+    public String isGenero() {
         return Genero;
     }
 
-    public void setGenero(boolean Genero) {
+    public void setGenero(String Genero) {
         this.Genero = Genero;
     }
 

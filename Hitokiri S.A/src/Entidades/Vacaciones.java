@@ -13,11 +13,11 @@ public class Vacaciones {
     private String FechaSolicitud;
 
     
-     public Vacaciones(int IdVacaciones, int CedulaEmpleado, int CantidadDeDias, String FechaSolicitud) {
-        this.IdVacaciones = IdVacaciones;
-        this.CedulaEmpleado = CedulaEmpleado;
-        this.CantidadDeDias = CantidadDeDias;
-        this.FechaSolicitud = FechaSolicitud;
+     public Vacaciones(String[] ObjectList) {
+        this.IdVacaciones = Integer.parseInt(ObjectList[0]);
+        this.CedulaEmpleado = Integer.parseInt(ObjectList[1]);
+        this.CantidadDeDias = Integer.parseInt(ObjectList[2]);
+        this.FechaSolicitud = ObjectList[3];
     }
 
     public Vacaciones() {
