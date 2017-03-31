@@ -27,16 +27,25 @@ import java.util.logging.Logger;
 public class CargarTXTDA {
     
     private String file = null;
-    
-    private ArrayList<Empleado> ObjEmpleados;
-    private ArrayList<Cliente> ObjClientes;
-    private ArrayList<Usuarios> ObjUsuarios;
-    private ArrayList<Peliculas> ObjPeliculas;
-    private ArrayList<Vacaciones> ObjVacaciones;
+    private Empleado ObjEmpleado;
+    private Cliente ObjCliente;
+    private Usuarios ObjUsuarios;
+    private Peliculas ObjPeliculas;
+    private Vacaciones ObjVacaciones;
+    private UsuariosDA UsuariosDA;
+            
+    protected ArrayList<Empleado> ListEmpleados;
+    protected ArrayList<Cliente> ListClientes;
+    protected ArrayList<Usuarios> ListUsuarios;
+    protected ArrayList<Peliculas> ListPeliculas;
+    protected ArrayList<Vacaciones> ListVacaciones;
     
     public CargarTXTDA() {
-        this.ObjClientes = new ArrayList();
-
+        this.ListEmpleados = new ArrayList();
+        this.ListClientes = new ArrayList();
+        this.ListUsuarios = new ArrayList();
+        this.ListPeliculas = new ArrayList();
+        this.ListVacaciones = new ArrayList();
     }
     
     
@@ -45,50 +54,52 @@ public class CargarTXTDA {
         for (int i = 0; i < files.length; i++) {
             switch (i){
                 case 0:
-                    rellenarListas(files[i],0,ObjEmpleados);
+                    rellenarListas(files[i],0);
                 break;
                 case 1:
-                     rellenarListas(files[i],1,ObjClientes);
+                     rellenarListas(files[i],1);
                 break;
                 case 2:
-                     rellenarListas(files[i],2,ObjUsuarios);
+                     rellenarListas(files[i],2);
                 break;
                 case 3:
-                     rellenarListas(files[i],3,ObjPeliculas);
+                     rellenarListas(files[i],3);
                 break;
                 case 4:
-                     rellenarListas(files[i],4,ObjVacaciones);
+                     rellenarListas(files[i],4);
                 break;
             }
         }
     }
     
-    private void rellenarListas(String file,int ObjType, ArrayList ObjArrayList){   
+    private void rellenarListas(String file,int ObjType){   
         
         try {
             BufferedReader bf = new BufferedReader(new FileReader(new File(file)));
             String bfRead="";
+            String[] arreglo;
             while((bfRead = bf.readLine()) != null){
+                arreglo = bfRead.split(";");
                     switch(ObjType){
                         case 0:
-                            ObjArrayList.add(new Empleado(bfRead.split(";")));
+                            ListEmpleados.add(this.ObjEmpleado = new Empleado(arreglo));
                         break;
                         case 1:
-                            ObjArrayList.add(new Cliente(bfRead.split(";")));
+                            ListClientes.add(this.ObjCliente = new Cliente(arreglo));
                         break;
                         case 2:
-                            ObjArrayList.add(new Usuarios(bfRead.split(";")));
+                            ListUsuarios.add(new Usuarios(arreglo));
                         break;
                         case 3:
-                            ObjArrayList.add(new Peliculas(bfRead.split(";")));
+                            ListPeliculas.add(new Peliculas(arreglo));
                         break;
                         case 4:
-                            ObjArrayList.add(new Vacaciones(bfRead.split(";")));
+                            ListVacaciones.add(new Vacaciones(arreglo));
                         break;
 
                     }
             }
-            
+            bf.close();
         } catch (IOException ex) {
             Logger.getLogger(CargarTXTDA.class.getName()).log(Level.SEVERE, null, ex);
         }

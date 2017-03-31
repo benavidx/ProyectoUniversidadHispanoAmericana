@@ -10,10 +10,13 @@ import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import CapaDeDatos.CargarTXTDA;
+import CapaLogica.CargarTXTBL;
+import CapaLogica.UsuariosBL;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -41,6 +44,7 @@ public class UIMain extends javax.swing.JFrame {
     }
             private boolean NormalState = true;
             private int x,y;
+            private UsuariosBL UsuariosBL = new UsuariosBL();
    
     private boolean VerificarTxt() {
         String Usuarios = System.getProperty("java.io.tmpdir") + "Usuarios.txt";
@@ -54,6 +58,20 @@ public class UIMain extends javax.swing.JFrame {
             CargarTxtUI.setVisible(true);
             CargarTxtUI.setLocationRelativeTo(null);
             return false;
+        } else {
+            try {
+                String[] Files = new String[]{
+                    Empleados,
+                    Clientes,
+                    Usuarios,
+                    Peliculas,
+                    Vacaciones                            
+                };
+                new CargarTXTBL().PrepararListas(Files);
+            } catch (IOException ex) {
+                Logger.getLogger(UIMain.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
         }
         return true;
     }
@@ -76,11 +94,11 @@ public class UIMain extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jTextField1 = new javax.swing.JTextField();
+        user = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        password = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
@@ -169,11 +187,12 @@ public class UIMain extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel7))
-            .addComponent(jLabel5)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel5)))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -185,10 +204,10 @@ public class UIMain extends javax.swing.JFrame {
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        user.setBorder(null);
+        user.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                userActionPerformed(evt);
             }
         });
 
@@ -201,12 +220,12 @@ public class UIMain extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTextField1)
+            .addComponent(user)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -225,7 +244,7 @@ public class UIMain extends javax.swing.JFrame {
         jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator3.setPreferredSize(new java.awt.Dimension(50, 10));
 
-        jPasswordField1.setBorder(null);
+        password.setBorder(null);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -236,7 +255,7 @@ public class UIMain extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
+                .addComponent(password, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
@@ -249,7 +268,7 @@ public class UIMain extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jPasswordField1)
+            .addComponent(password)
         );
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/LOGO.png"))); // NOI18N
@@ -274,7 +293,7 @@ public class UIMain extends javax.swing.JFrame {
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 24, Short.MAX_VALUE))
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 446, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -327,9 +346,9 @@ public class UIMain extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnIngresarActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_userActionPerformed
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
         System.exit(-1);
@@ -356,10 +375,13 @@ public class UIMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel2MouseDragged
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-                
-        this.setVisible(false);
-        ManagerShop Manager = new ManagerShop();
-        Manager.setVisible(true);
+        if (UsuariosBL.QueryUser(user.getText(),String.valueOf(password.getPassword()))) {
+            this.setVisible(false);
+            ManagerShop Manager = new ManagerShop();
+            Manager.setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(this, "Los datos son erroneos");
+        }
     }//GEN-LAST:event_jButton1MouseClicked
     
     private void setCurrentLocation(MouseEvent evt) {
@@ -420,10 +442,10 @@ public class UIMain extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPasswordField password;
+    private javax.swing.JTextField user;
     // End of variables declaration//GEN-END:variables
 
 }
