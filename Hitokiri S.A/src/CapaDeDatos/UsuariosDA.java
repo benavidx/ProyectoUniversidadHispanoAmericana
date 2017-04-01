@@ -6,7 +6,6 @@
 package CapaDeDatos;
 
 import Entidades.Usuarios;
-import java.util.ArrayList;
 
 /**
  *
@@ -16,16 +15,15 @@ public class UsuariosDA {
     
     private CargarTXTDA CargarTXTDA;
     
-    protected ArrayList<Usuarios> ListUsuarios;
-    
     public UsuariosDA() {
+        CargarTXTDA = new CargarTXTDA(null);
         
     }
     
     public boolean QueryUser(String user, String password) {
         if (!"".equals(user) && !"".equals(password)) {
-            for (Usuarios itemFind : CargarTXTDA.ListUsuarios) {
-                if (itemFind.getUsuario() == user && itemFind.getContraseña()==password) {
+            for (Usuarios itemFind : CapaDeDatos.CargarTXTDA.ListUsuarios) {
+                if (itemFind.getUsuario().equals(user) && itemFind.getContraseña().equals(password)) {
                     return true;
                 }
             }

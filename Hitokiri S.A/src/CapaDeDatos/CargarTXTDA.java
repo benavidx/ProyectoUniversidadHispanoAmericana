@@ -26,26 +26,16 @@ import java.util.logging.Logger;
  */
 public class CargarTXTDA {
     
-    private String file = null;
-    private Empleado ObjEmpleado;
-    private Cliente ObjCliente;
-    private Usuarios ObjUsuarios;
-    private Peliculas ObjPeliculas;
-    private Vacaciones ObjVacaciones;
-    private UsuariosDA UsuariosDA;
-            
-    protected ArrayList<Empleado> ListEmpleados;
-    protected ArrayList<Cliente> ListClientes;
-    protected ArrayList<Usuarios> ListUsuarios;
-    protected ArrayList<Peliculas> ListPeliculas;
-    protected ArrayList<Vacaciones> ListVacaciones;
+    protected ArrayList<Empleado> ListEmpleados = new ArrayList();
+    protected ArrayList<Cliente> ListClientes = new ArrayList();
+    protected static ArrayList<Usuarios> ListUsuarios = new ArrayList();
+    protected ArrayList<Peliculas> ListPeliculas = new ArrayList();
+    protected ArrayList<Vacaciones> ListVacaciones = new ArrayList();
     
     public CargarTXTDA() {
-        this.ListEmpleados = new ArrayList();
-        this.ListClientes = new ArrayList();
-        this.ListUsuarios = new ArrayList();
-        this.ListPeliculas = new ArrayList();
-        this.ListVacaciones = new ArrayList();
+    }
+    public CargarTXTDA(String s) {
+        
     }
     
     
@@ -82,10 +72,10 @@ public class CargarTXTDA {
                 arreglo = bfRead.split(";");
                     switch(ObjType){
                         case 0:
-                            ListEmpleados.add(this.ObjEmpleado = new Empleado(arreglo));
+                            ListEmpleados.add(new Empleado(arreglo));
                         break;
                         case 1:
-                            ListClientes.add(this.ObjCliente = new Cliente(arreglo));
+                            ListClientes.add(new Cliente(arreglo));
                         break;
                         case 2:
                             ListUsuarios.add(new Usuarios(arreglo));
