@@ -105,7 +105,7 @@ public class Cliente {
         this.Carnet = Carnet;
     }
 
-    public boolean isEstado() {
+    public boolean getEstado() {
         return Estado;
     }
 
@@ -113,15 +113,13 @@ public class Cliente {
         this.Estado = Estado;
     }
 
-    public boolean isGenero() {
+    public boolean getGenero() {
         return Genero;
     }
 
     public void setGenero(boolean Genero) {
         this.Genero = Genero;
     }
-    
-    
-    
-    
+
+  
 }

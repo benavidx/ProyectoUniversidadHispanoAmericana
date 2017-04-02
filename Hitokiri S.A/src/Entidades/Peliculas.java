@@ -38,6 +38,14 @@ public class Peliculas {
         this.Descripcion = Descripcion;
     }
 
+    public String getGenero() {
+        return Genero;
+    }
+
+    public void setGenero(String Genero) {
+        this.Genero = Genero;
+    }
+
     public int getIdPeliculas() {
         return IdPeliculas;
     }
@@ -54,24 +62,14 @@ public class Peliculas {
         this.cantidad = cantidad;
     }
 
-    public String isGenero() {
-        return Genero;
-    }
-
-    public void setGenero(String Genero) {
-        this.Genero = Genero;
-    }
-
-    public boolean isEstado() {
+    public boolean getEstado() {
         return Estado;
     }
 
     public void setEstado(boolean Estado) {
         this.Estado = Estado;
     }
-    
-    
-    
-    
+
+ 
 }
 

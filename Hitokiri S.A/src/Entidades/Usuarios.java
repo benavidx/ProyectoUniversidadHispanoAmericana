@@ -11,7 +11,7 @@ package Entidades;
  */
 public class Usuarios {
     private String Usuario, Contraseña, FechaDeIngreso;
-    private int identificador;
+    private int identificador, intentos;
     private boolean Bloqueado, Estado;
 
      public Usuarios(String[] ObjectList) {
@@ -21,6 +21,7 @@ public class Usuarios {
         this.identificador = Integer.parseInt(ObjectList[3]);
         this.Bloqueado = Boolean.parseBoolean(ObjectList[4]);
         this.Estado = Boolean.parseBoolean(ObjectList[5]);
+        this.intentos=0;
     }
 
     public Usuarios() {
@@ -64,7 +65,15 @@ public class Usuarios {
         this.identificador = identificador;
     }
 
-    public boolean isBloqueado() {
+    public int getIntentos() {
+        return intentos;
+    }
+
+    public void setIntentos(int intentos) {
+        this.intentos = intentos;
+    }
+
+    public boolean getBloqueado() {
         return Bloqueado;
     }
 
@@ -72,15 +81,14 @@ public class Usuarios {
         this.Bloqueado = Bloqueado;
     }
 
-    public boolean isEstado() {
+    public boolean getEstado() {
         return Estado;
     }
 
     public void setEstado(boolean Estado) {
         this.Estado = Estado;
     }
-    
-    
+
     
     
 }

@@ -380,7 +380,7 @@ public class UIMain extends javax.swing.JFrame {
             ManagerShop Manager = new ManagerShop();
             Manager.setVisible(true);
         }else{
-            JOptionPane.showMessageDialog(this, "Los datos son erroneos");
+            JOptionPane.showMessageDialog(this, "Acceso Denegado");
         }
     }//GEN-LAST:event_jButton1MouseClicked
     

@@ -16,8 +16,8 @@ public class Vacaciones {
      public Vacaciones(String[] ObjectList) {
         this.IdVacaciones = Integer.parseInt(ObjectList[0]);
         this.CedulaEmpleado = Integer.parseInt(ObjectList[1]);
-        this.CantidadDeDias = Integer.parseInt(ObjectList[2]);
-        this.FechaSolicitud = ObjectList[3];
+        this.FechaSolicitud = ObjectList[2];
+        this.CantidadDeDias = Integer.parseInt(ObjectList[3]);
     }
 
     public Vacaciones() {
@@ -58,9 +58,6 @@ public class Vacaciones {
     public void setFechaSolicitud(String FechaSolicitud) {
         this.FechaSolicitud = FechaSolicitud;
     }
-    
-    
-    
     
 }
 

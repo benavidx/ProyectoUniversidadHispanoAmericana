@@ -82,16 +82,14 @@ public class Empleado {
         this.Identificador = Identificador;
     }
 
-    public boolean isEstado() {
+    public boolean getEstado() {
         return Estado;
     }
 
     public void setEstado(boolean Estado) {
         this.Estado = Estado;
     }
-    
-    
-    
-    
+
+ 
 }
 

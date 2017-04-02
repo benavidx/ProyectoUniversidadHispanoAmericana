@@ -26,11 +26,11 @@ import java.util.logging.Logger;
  */
 public class CargarTXTDA {
     
-    protected ArrayList<Empleado> ListEmpleados = new ArrayList();
-    protected ArrayList<Cliente> ListClientes = new ArrayList();
+    protected static ArrayList<Empleado> ListEmpleados = new ArrayList();
+    protected static ArrayList<Cliente> ListClientes = new ArrayList();
     protected static ArrayList<Usuarios> ListUsuarios = new ArrayList();
-    protected ArrayList<Peliculas> ListPeliculas = new ArrayList();
-    protected ArrayList<Vacaciones> ListVacaciones = new ArrayList();
+    protected static ArrayList<Peliculas> ListPeliculas = new ArrayList();
+    protected static ArrayList<Vacaciones> ListVacaciones = new ArrayList();
     
     public CargarTXTDA() {
     }

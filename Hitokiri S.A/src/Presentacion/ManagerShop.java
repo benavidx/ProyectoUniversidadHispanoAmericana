@@ -44,6 +44,8 @@ public class ManagerShop extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanelMenus = new javax.swing.JPanel();
         Clientes = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         RRHH = new javax.swing.JPanel();
         Inventario = new javax.swing.JPanel();
         Reservacion = new javax.swing.JPanel();
@@ -162,15 +164,33 @@ public class ManagerShop extends javax.swing.JFrame {
         Clientes.setPreferredSize(new java.awt.Dimension(890, 100));
         Clientes.setRequestFocusEnabled(false);
 
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/BOTONERA GRANDE/toolBar/Add User Male_30px.png"))); // NOI18N
+        jLabel6.setText("Agregar");
+
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/BOTONERA GRANDE/toolBar/Edit User Male_30px_1.png"))); // NOI18N
+        jLabel7.setText("Modificar");
+
         javax.swing.GroupLayout ClientesLayout = new javax.swing.GroupLayout(Clientes);
         Clientes.setLayout(ClientesLayout);
         ClientesLayout.setHorizontalGroup(
             ClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 890, Short.MAX_VALUE)
+            .addGroup(ClientesLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel6)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel7)
+                .addContainerGap(698, Short.MAX_VALUE))
         );
         ClientesLayout.setVerticalGroup(
             ClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(ClientesLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(ClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         jPanelMenus.add(Clientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -575,6 +595,8 @@ public class ManagerShop extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabelClientes;
     private javax.swing.JLabel jLabelDisponibilidad;
     private javax.swing.JLabel jLabelHistorico;
