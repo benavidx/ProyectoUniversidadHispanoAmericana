@@ -5,6 +5,7 @@
  */
 package Presentacion;
 
+import CapaLogica.ClientesBL;
 import java.awt.event.MouseEvent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -60,6 +61,8 @@ public class ManagerShop extends javax.swing.JFrame {
         jLabelDisponibilidad = new javax.swing.JLabel();
         jLabelSession = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -358,7 +361,7 @@ public class ManagerShop extends javax.swing.JFrame {
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelMenus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelMenus, javax.swing.GroupLayout.DEFAULT_SIZE, 1040, Short.MAX_VALUE)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel9Layout.createSequentialGroup()
@@ -414,19 +417,43 @@ public class ManagerShop extends javax.swing.JFrame {
             .addGap(0, 493, Short.MAX_VALUE)
         );
 
+        jScrollPane1.setAutoscrolls(true);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jTable1.setGridColor(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setViewportView(jTable1);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -443,55 +470,41 @@ public class ManagerShop extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseEntered
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/BOTONERA GRANDE/CANCEL-GRANDE-IN.png"))); // NOI18N
-    }//GEN-LAST:event_jLabel1MouseEntered
+    private void jLabelSessionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelSessionMouseClicked
+        enabledHeader(jLabelSession);
+        enabledPanels(Session);
+    }//GEN-LAST:event_jLabelSessionMouseClicked
 
-    private void jLabel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseExited
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/BOTONERA GRANDE/CANCEL-GRANDE-OUT.png"))); // NOI18N
-    }//GEN-LAST:event_jLabel1MouseExited
+    private void jLabelDisponibilidadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelDisponibilidadMouseClicked
+        enabledHeader(jLabelDisponibilidad);
+        enabledPanels(Disponibilidad);
+    }//GEN-LAST:event_jLabelDisponibilidadMouseClicked
 
-    private void jLabel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseEntered
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/BOTONERA GRANDE/MIN-40-IN.png"))); // NOI18N
-    }//GEN-LAST:event_jLabel2MouseEntered
+    private void jLabelHistoricoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelHistoricoMouseClicked
+        enabledHeader(jLabelHistorico);
+        enabledPanels(Historico);
+    }//GEN-LAST:event_jLabelHistoricoMouseClicked
 
-    private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/BOTONERA GRANDE/MIN-40-OUT.png"))); // NOI18N
-    }//GEN-LAST:event_jLabel2MouseExited
+    private void jLabelReservacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelReservacionMouseClicked
+        enabledHeader(jLabelReservacion);
+        enabledPanels(Reservacion);
+    }//GEN-LAST:event_jLabelReservacionMouseClicked
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        System.exit(-1);
-    }//GEN-LAST:event_jLabel1MouseClicked
+    private void jLabelInventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelInventarioMouseClicked
+        enabledHeader(jLabelInventario);
+        enabledPanels(Inventario);
+    }//GEN-LAST:event_jLabelInventarioMouseClicked
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        this.setExtendedState(ICONIFIED);
-    }//GEN-LAST:event_jLabel2MouseClicked
+    private void jLabelRRHHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelRRHHMouseClicked
+        enabledHeader(jLabelRRHH);
+        enabledPanels(RRHH);
+    }//GEN-LAST:event_jLabelRRHHMouseClicked
 
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        if (normalSize) {
-            this.setExtendedState(MAXIMIZED_BOTH);
-            normalSize = false;
-        }else{
-            this.setExtendedState(NORMAL);
-            normalSize = true;
-        }
-    }//GEN-LAST:event_jLabel3MouseClicked
-
-    private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
-        if(normalSize){
-            jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/BOTONERA GRANDE/MAXIN-40-IN.png"))); // NOI18N
-        }else{
-            jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/BOTONERA GRANDE/REST-GRANDE-IN.png"))); // NOI18N
-        }
-    }//GEN-LAST:event_jLabel3MouseEntered
-
-    private void jLabel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseExited
-        if(normalSize){
-            jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/BOTONERA GRANDE/MAXIN-40-OUT.png"))); // NOI18N
-        }else{
-            jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/BOTONERA GRANDE/REST-GRANDE-OUT.png"))); // NOI18N
-        }
-    }//GEN-LAST:event_jLabel3MouseExited
+    private void jLabelClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelClientesMouseClicked
+        enabledHeader(jLabelClientes);
+        enabledPanels(Clientes);
+        getCurrentContentTable(1);
+    }//GEN-LAST:event_jLabelClientesMouseClicked
 
     private void jPanel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MousePressed
         setCurrentLocation(evt);
@@ -513,40 +526,55 @@ public class ManagerShop extends javax.swing.JFrame {
         Mover(evt);
     }//GEN-LAST:event_jPanel2MouseDragged
 
-    private void jLabelClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelClientesMouseClicked
-        enabledHeader(jLabelClientes);
-        enabledPanels(Clientes);
-    }//GEN-LAST:event_jLabelClientesMouseClicked
+    private void jLabel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseExited
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/BOTONERA GRANDE/CANCEL-GRANDE-OUT.png"))); // NOI18N
+    }//GEN-LAST:event_jLabel1MouseExited
 
-    private void jLabelRRHHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelRRHHMouseClicked
-        enabledHeader(jLabelRRHH);
-        enabledPanels(RRHH);
-    }//GEN-LAST:event_jLabelRRHHMouseClicked
+    private void jLabel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseEntered
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/BOTONERA GRANDE/CANCEL-GRANDE-IN.png"))); // NOI18N
+    }//GEN-LAST:event_jLabel1MouseEntered
 
-    private void jLabelInventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelInventarioMouseClicked
-        enabledHeader(jLabelInventario);
-        enabledPanels(Inventario);
-    }//GEN-LAST:event_jLabelInventarioMouseClicked
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        System.exit(-1);
+    }//GEN-LAST:event_jLabel1MouseClicked
 
-    private void jLabelReservacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelReservacionMouseClicked
-        enabledHeader(jLabelReservacion);
-        enabledPanels(Reservacion);
-    }//GEN-LAST:event_jLabelReservacionMouseClicked
+    private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/BOTONERA GRANDE/MIN-40-OUT.png"))); // NOI18N
+    }//GEN-LAST:event_jLabel2MouseExited
 
-    private void jLabelHistoricoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelHistoricoMouseClicked
-        enabledHeader(jLabelHistorico);
-        enabledPanels(Historico);
-    }//GEN-LAST:event_jLabelHistoricoMouseClicked
+    private void jLabel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseEntered
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/BOTONERA GRANDE/MIN-40-IN.png"))); // NOI18N
+    }//GEN-LAST:event_jLabel2MouseEntered
 
-    private void jLabelDisponibilidadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelDisponibilidadMouseClicked
-        enabledHeader(jLabelDisponibilidad);
-        enabledPanels(Disponibilidad);
-    }//GEN-LAST:event_jLabelDisponibilidadMouseClicked
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        this.setExtendedState(ICONIFIED);
+    }//GEN-LAST:event_jLabel2MouseClicked
 
-    private void jLabelSessionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelSessionMouseClicked
-        enabledHeader(jLabelSession);
-        enabledPanels(Session);
-    }//GEN-LAST:event_jLabelSessionMouseClicked
+    private void jLabel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseExited
+        if(normalSize){
+            jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/BOTONERA GRANDE/MAXIN-40-OUT.png"))); // NOI18N
+        }else{
+            jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/BOTONERA GRANDE/REST-GRANDE-OUT.png"))); // NOI18N
+        }
+    }//GEN-LAST:event_jLabel3MouseExited
+
+    private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
+        if(normalSize){
+            jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/BOTONERA GRANDE/MAXIN-40-IN.png"))); // NOI18N
+        }else{
+            jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/BOTONERA GRANDE/REST-GRANDE-IN.png"))); // NOI18N
+        }
+    }//GEN-LAST:event_jLabel3MouseEntered
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        if (normalSize) {
+            this.setExtendedState(MAXIMIZED_BOTH);
+            normalSize = false;
+        }else{
+            this.setExtendedState(NORMAL);
+            normalSize = true;
+        }
+    }//GEN-LAST:event_jLabel3MouseClicked
 
     private void setCurrentLocation(MouseEvent evt) {
         x = evt.getX();
@@ -583,6 +611,15 @@ public class ManagerShop extends javax.swing.JFrame {
             }
         }
     }
+    
+    private void getCurrentContentTable(int i) {
+        switch(i){
+            case 0:
+                jTable1.setModel(new ClientesBL().getModelDataTable());
+            break;
+        }
+        
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Clientes;
     private javax.swing.JPanel Disponibilidad;
@@ -609,5 +646,7 @@ public class ManagerShop extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JPanel jPanelMenus;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

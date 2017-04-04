@@ -11,9 +11,9 @@ package Entidades;
  */
 public class Cliente {
     
-    private String Nombre, Apellido1, Apellido2, FechaDeNacimiento, Direccion,Profesion;
+    private String Nombre, Apellido1, Apellido2, FechaDeNacimiento, Direccion,Profesion,Genero;
     private int Cedula, Carnet;
-    boolean Estado, Genero;
+    boolean Estado;
 
     public Cliente(String[] ObjList) {
         this.Nombre = ObjList[0];
@@ -25,20 +25,7 @@ public class Cliente {
         this.Cedula = Integer.parseInt(ObjList[6]);
         this.Carnet = Integer.parseInt(ObjList[7]);
         this.Estado = Boolean.parseBoolean(ObjList[8]);
-        this.Genero = Boolean.parseBoolean(ObjList[9]);
-    }
-
-    public Cliente() {
-        this.Nombre = "";
-        this.Apellido1 = "";
-        this.Apellido2 = "";
-        this.FechaDeNacimiento = "";
-        this.Direccion = "";
-        this.Profesion = "";
-        this.Cedula = 0;
-        this.Carnet = 0;
-        this.Estado = false;
-        this.Genero = false;
+        setGenero(Boolean.parseBoolean(ObjList[9]));
     }
 
     public String getNombre() {
@@ -113,12 +100,15 @@ public class Cliente {
         this.Estado = Estado;
     }
 
-    public boolean getGenero() {
+    public String getGenero() {
         return Genero;
     }
 
     public void setGenero(boolean Genero) {
-        this.Genero = Genero;
+        if (Genero) 
+            this.Genero = "Masculino";   
+        else
+            this.Genero = "Femenino";   
     }
 
   
