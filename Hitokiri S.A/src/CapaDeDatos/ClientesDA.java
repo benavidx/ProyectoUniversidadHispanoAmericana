@@ -13,7 +13,6 @@ import Entidades.Cliente;
  */
 public class ClientesDA {
     
-    
     public ClientesDA(){
         
     }
@@ -51,4 +50,34 @@ public class ClientesDA {
         return Model;
     }
     
+    
+    public boolean addCliente(Cliente Cliente){
+        
+        if (Cliente!=null) {
+            CapaDeDatos.CargarTXTDA.ListClientes.add(Cliente);
+            return true;
+        }
+        else{
+            return false;
+            
+        }
+    }
+
+    public javax.swing.table.DefaultTableModel editItem(Cliente cliente ,int id) {    
+        for (Cliente itemFind : CapaDeDatos.CargarTXTDA.ListClientes) {
+            if (itemFind.getCedula() == id) {
+                CapaDeDatos.CargarTXTDA.ListClientes.set(CapaDeDatos.CargarTXTDA.ListClientes.indexOf(itemFind), cliente);
+            }
+        }
+        return getModelDataTable(false);
+    }
+    
+    public javax.swing.table.DefaultTableModel deleteItem(int id) {    
+        for (Cliente itemFind : CapaDeDatos.CargarTXTDA.ListClientes) {
+            if (itemFind.getCedula() == id) {
+                CapaDeDatos.CargarTXTDA.ListClientes.remove(itemFind);
+            }
+        }
+        return getModelDataTable(false);
+    }
 }

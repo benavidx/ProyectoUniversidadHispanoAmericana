@@ -28,6 +28,20 @@ public class Cliente {
         setGenero(Boolean.parseBoolean(ObjList[9]));
     }
 
+    public Cliente(String Nombre, String Apellido1, String Apellido2, String FechaDeNacimiento, String Direccion, String Profesion, String Genero, int Cedula, int Carnet, boolean Estado) {
+        this.Nombre = Nombre;
+        this.Apellido1 = Apellido1;
+        this.Apellido2 = Apellido2;
+        this.FechaDeNacimiento = FechaDeNacimiento;
+        this.Direccion = Direccion;
+        this.Profesion = Profesion;
+        this.Genero = Genero;
+        this.Cedula = Cedula;
+        this.Carnet = Carnet;
+        this.Estado = Estado;
+    }
+
+    
     public String getNombre() {
         return Nombre;
     }
