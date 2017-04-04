@@ -20,7 +20,7 @@ public class ClientesBL {
     
     
     
-    public javax.swing.table.DefaultTableModel getModelDataTable(){
-        return ClientesDA.getModelDataTable();
+    public javax.swing.table.DefaultTableModel getModelDataTable(boolean filtrado){
+        return ClientesDA.getModelDataTable(filtrado);
     }
 }
