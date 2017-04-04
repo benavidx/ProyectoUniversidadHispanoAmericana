@@ -25,7 +25,7 @@ public class ClientesBL {
         return ClientesDA.getModelDataTable(filtrado);
     }
     
-       public boolean addCliente(Cliente Cliente){
+       public javax.swing.table.DefaultTableModel addCliente(Cliente Cliente){
           return ClientesDA.addCliente(Cliente);
     }
        

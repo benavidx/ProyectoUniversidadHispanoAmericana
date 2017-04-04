@@ -51,16 +51,13 @@ public class ClientesDA {
     }
     
     
-    public boolean addCliente(Cliente Cliente){
+    public javax.swing.table.DefaultTableModel addCliente(Cliente Cliente){
         
         if (Cliente!=null) {
             CapaDeDatos.CargarTXTDA.ListClientes.add(Cliente);
-            return true;
+            return getModelDataTable(false);
         }
-        else{
-            return false;
-            
-        }
+        return null;
     }
 
     public javax.swing.table.DefaultTableModel editItem(Cliente cliente ,int id) {    

@@ -25,6 +25,7 @@ public class ManagerShop extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         enabledHeader(jLabelClientes);
         enabledPanels(Clientes,OpcionesCliente,0);
+        getCurrentContentTable(0,false);
     }
     private boolean normalSize = true;
     private int x,y;
@@ -921,11 +922,8 @@ public class ManagerShop extends javax.swing.JFrame {
         {
          JOptionPane.showMessageDialog(this,"Debe de rellenar todos los campos para poder hacer la inserción");
         }else{
-            if (new ClientesBL().addCliente(new Entidades.Cliente(ClienteNombre.getText(), ClientePrimerApellido.getText(), ClienteSegundoApellido.getText(), ClienteFechaNacimiento.getText(), ClienteDireccion.getText(), ClienteProfesion.getText(), String.valueOf(ClienteGenero.getSelectedItem()), Integer.parseInt(ClienteCedula.getText()), Integer.parseInt(ClienteCarnet.getText()),ClienteEstado.isSelected()))) {
-                JOptionPane.showMessageDialog(this, "Inserción correcta");
-            }else{
-                JOptionPane.showMessageDialog(this, "Error al tratar de insertar los datos");
-            }
+            jTable1.setModel(new ClientesBL().addCliente(new Entidades.Cliente(ClienteNombre.getText(), ClientePrimerApellido.getText(), ClienteSegundoApellido.getText(), ClienteFechaNacimiento.getText(), ClienteDireccion.getText(), ClienteProfesion.getText(), String.valueOf(ClienteGenero.getSelectedItem()), Integer.parseInt(ClienteCedula.getText()), Integer.parseInt(ClienteCarnet.getText()),ClienteEstado.isSelected())));
+
         }
     }//GEN-LAST:event_jLabel6MouseClicked
 
