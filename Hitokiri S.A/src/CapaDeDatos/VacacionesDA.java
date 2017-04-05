@@ -91,8 +91,9 @@ public class VacacionesDA {
         java.util.Calendar Solicitud = java.util.Calendar.getInstance();
         String[] FechaSolicitud = fechaSolicitud.split("-");
         
-        Solicitud.set(Integer.parseInt(FechaSolicitud[2]), Integer.parseInt(FechaSolicitud[1]), Integer.parseInt(FechaSolicitud[0]));
+        Solicitud.set(Integer.parseInt(FechaSolicitud[2]), Integer.parseInt(FechaSolicitud[1])-1, Integer.parseInt(FechaSolicitud[0]));
         System.out.println(FechaSolicitud[2]+"/"+FechaSolicitud[1]+"/"+FechaSolicitud[0]);
+        System.out.println(Solicitud.getTime());
         Solicitud.add(java.util.Calendar.DAY_OF_YEAR, cantidadDias);
         System.out.println(Solicitud.getTime());
     }
