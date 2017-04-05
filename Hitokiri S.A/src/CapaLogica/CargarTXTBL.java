@@ -5,7 +5,6 @@
  */
 package CapaLogica;
 
-
 import CapaDeDatos.CargarTXTDA;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -15,16 +14,13 @@ import java.io.IOException;
  * @author Antonio
  */
 public class CargarTXTBL {
-    
-    public CargarTXTBL(){
-        
+
+    public CargarTXTBL() {
+
     }
-    
-    
-    
-    public void PrepararListas(String[] files) throws FileNotFoundException, IOException{
+
+    public void PrepararListas(String[] files) throws FileNotFoundException, IOException {
         new CargarTXTDA().PrepararListas(files);
     }
-     
-    
+
 }

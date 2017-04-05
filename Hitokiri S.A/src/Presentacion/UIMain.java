@@ -42,19 +42,19 @@ public class UIMain extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
     }
-            private boolean NormalState = true;
-            private int x,y;
-            private UsuariosBL UsuariosBL = new UsuariosBL();
-   
+    private boolean NormalState = true;
+    private int x, y;
+    private UsuariosBL UsuariosBL = new UsuariosBL();
+
     private boolean VerificarTxt() {
         String Usuarios = System.getProperty("java.io.tmpdir") + "Usuarios.txt";
         String Empleados = System.getProperty("java.io.tmpdir") + "Empleados.txt";
         String Clientes = System.getProperty("java.io.tmpdir") + "Clientes.txt";
         String Peliculas = System.getProperty("java.io.tmpdir") + "Peliculas.txt";
         String Vacaciones = System.getProperty("java.io.tmpdir") + "Vacaciones.txt";
-            
+
         if (!new java.io.File(Usuarios).exists() || !new java.io.File(Empleados).exists() || !new java.io.File(Clientes).exists() || !new java.io.File(Peliculas).exists() || !new java.io.File(Vacaciones).exists()) {
-            CargarTxtUI CargarTxtUI =new CargarTxtUI();
+            CargarTxtUI CargarTxtUI = new CargarTxtUI();
             CargarTxtUI.setVisible(true);
             CargarTxtUI.setLocationRelativeTo(null);
             return false;
@@ -65,13 +65,13 @@ public class UIMain extends javax.swing.JFrame {
                     Clientes,
                     Usuarios,
                     Peliculas,
-                    Vacaciones                            
+                    Vacaciones
                 };
                 new CargarTXTBL().PrepararListas(Files);
             } catch (IOException ex) {
                 Logger.getLogger(UIMain.class.getName()).log(Level.SEVERE, null, ex);
             }
-        
+
         }
         return true;
     }
@@ -375,25 +375,24 @@ public class UIMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel2MouseDragged
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        if (UsuariosBL.QueryUser(user.getText(),String.valueOf(password.getPassword()))) {
+        if (UsuariosBL.QueryUser(user.getText(), String.valueOf(password.getPassword()))) {
             this.setVisible(false);
             ManagerShop Manager = new ManagerShop();
             Manager.setVisible(true);
-        }else{
+        } else {
             JOptionPane.showMessageDialog(this, "Acceso Denegado");
         }
     }//GEN-LAST:event_jButton1MouseClicked
-    
+
     private void setCurrentLocation(MouseEvent evt) {
         x = evt.getX();
         y = evt.getY();
     }
-    
-    private void Mover(java.awt.event.MouseEvent evt){
-        this.setLocation(this.getLocation().x + evt.getX()- x,this.getLocation().y+evt.getY()- y);
+
+    private void Mover(java.awt.event.MouseEvent evt) {
+        this.setLocation(this.getLocation().x + evt.getX() - x, this.getLocation().y + evt.getY() - y);
     }
-    
-    
+
     /**
      * @param args the command line arguments
      */

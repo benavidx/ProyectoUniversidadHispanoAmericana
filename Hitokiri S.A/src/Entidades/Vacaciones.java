@@ -4,16 +4,17 @@
  * and open the template in the editor.
  */
 package Entidades;
+
 /**
  *
  * @author Antonio
  */
 public class Vacaciones {
+
     private int IdVacaciones, CedulaEmpleado, CantidadDeDias;
     private String FechaSolicitud;
 
-    
-     public Vacaciones(String[] ObjectList) {
+    public Vacaciones(String[] ObjectList) {
         this.IdVacaciones = Integer.parseInt(ObjectList[0]);
         this.CedulaEmpleado = Integer.parseInt(ObjectList[1]);
         this.FechaSolicitud = ObjectList[2];
@@ -58,6 +59,5 @@ public class Vacaciones {
     public void setFechaSolicitud(String FechaSolicitud) {
         this.FechaSolicitud = FechaSolicitud;
     }
-    
-}
 
+}

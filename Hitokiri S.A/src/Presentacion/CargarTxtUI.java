@@ -225,7 +225,7 @@ public class CargarTxtUI extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         jFileChooser1.showOpenDialog(this);
-        if (javax.swing.JFileChooser.APPROVE_OPTION==jFileChooser1.getApproveButtonMnemonic() && jFileChooser1.getSelectedFile()!= null) {
+        if (javax.swing.JFileChooser.APPROVE_OPTION == jFileChooser1.getApproveButtonMnemonic() && jFileChooser1.getSelectedFile() != null) {
             empleadosTxtUrl.setText(jFileChooser1.getSelectedFile().getAbsolutePath());
             jFileChooser1.setSelectedFile(null);
         }
@@ -236,8 +236,8 @@ public class CargarTxtUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jFileChooser1ActionPerformed
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-                jFileChooser1.showOpenDialog(this);
-        if (javax.swing.JFileChooser.APPROVE_OPTION==jFileChooser1.getApproveButtonMnemonic() && jFileChooser1.getSelectedFile()!= null) {
+        jFileChooser1.showOpenDialog(this);
+        if (javax.swing.JFileChooser.APPROVE_OPTION == jFileChooser1.getApproveButtonMnemonic() && jFileChooser1.getSelectedFile() != null) {
             clientesTxtUrl.setText(jFileChooser1.getSelectedFile().getAbsolutePath());
             jFileChooser1.setSelectedFile(null);
         }
@@ -268,7 +268,7 @@ public class CargarTxtUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
-        if (!"".equals(clientesTxtUrl.getText()) && !"".equals(empleadosTxtUrl.getText()) && !"".equals(peliculasTxtUrl.getText()) && !"".equals(usuariosTxtUrl.getText()) && !"".equals(vacacionesTxtUrl.getText()) ){
+        if (!"".equals(clientesTxtUrl.getText()) && !"".equals(empleadosTxtUrl.getText()) && !"".equals(peliculasTxtUrl.getText()) && !"".equals(usuariosTxtUrl.getText()) && !"".equals(vacacionesTxtUrl.getText())) {
             try {
                 String[] Files = new String[]{
                     empleadosTxtUrl.getText(),

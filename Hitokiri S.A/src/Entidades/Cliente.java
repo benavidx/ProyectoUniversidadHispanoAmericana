@@ -10,8 +10,8 @@ package Entidades;
  * @author Antonio
  */
 public class Cliente {
-    
-    private String Nombre, Apellido1, Apellido2, FechaDeNacimiento, Direccion,Profesion,Genero;
+
+    private String Nombre, Apellido1, Apellido2, FechaDeNacimiento, Direccion, Profesion, Genero;
     private int Cedula, Carnet;
     boolean Estado;
 
@@ -41,7 +41,6 @@ public class Cliente {
         this.Estado = Estado;
     }
 
-    
     public String getNombre() {
         return Nombre;
     }
@@ -119,11 +118,11 @@ public class Cliente {
     }
 
     public void setGenero(boolean Genero) {
-        if (Genero) 
-            this.Genero = "Masculino";   
-        else
-            this.Genero = "Femenino";   
+        if (Genero) {
+            this.Genero = "Masculino";
+        } else {
+            this.Genero = "Femenino";
+        }
     }
 
-  
 }

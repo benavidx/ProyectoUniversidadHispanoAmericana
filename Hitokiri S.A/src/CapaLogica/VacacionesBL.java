@@ -7,8 +7,8 @@ package CapaLogica;
 
 /**
  *
- * @author Antonio
+ * @author Usuario
  */
-public class EmpleadoBL {
+public class VacacionesBL {
 
 }

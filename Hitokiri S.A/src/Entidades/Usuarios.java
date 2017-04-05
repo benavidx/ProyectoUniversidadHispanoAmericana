@@ -10,22 +10,23 @@ package Entidades;
  * @author Antonio
  */
 public class Usuarios {
+
     private String Usuario, Contraseña, FechaDeIngreso;
     private int identificador, intentos;
     private boolean Bloqueado, Estado;
 
-     public Usuarios(String[] ObjectList) {
+    public Usuarios(String[] ObjectList) {
         this.Usuario = ObjectList[0];
         this.Contraseña = ObjectList[1];
         this.FechaDeIngreso = ObjectList[2];
         this.identificador = Integer.parseInt(ObjectList[3]);
         this.Bloqueado = Boolean.parseBoolean(ObjectList[4]);
         this.Estado = Boolean.parseBoolean(ObjectList[5]);
-        this.intentos=0;
+        this.intentos = 0;
     }
 
     public Usuarios() {
-         this.Usuario = "";
+        this.Usuario = "";
         this.Contraseña = "";
         this.FechaDeIngreso = "";
         this.identificador = 0;
@@ -89,7 +90,4 @@ public class Usuarios {
         this.Estado = Estado;
     }
 
-    
-    
 }
-

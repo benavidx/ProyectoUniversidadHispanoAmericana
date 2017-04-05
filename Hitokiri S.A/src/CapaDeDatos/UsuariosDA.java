@@ -12,14 +12,15 @@ import Entidades.Usuarios;
  * @author Antonio
  */
 public class UsuariosDA {
-    
+
     private CargarTXTDA CargarTXTDA;
     private EmpleadoDA EmpleadoDA;
+
     public UsuariosDA() {
         CargarTXTDA = new CargarTXTDA(null);
         EmpleadoDA = new EmpleadoDA();
     }
-    
+
     public boolean QueryUser(String user, String password) {
         if (!"".equals(user) && !"".equals(password)) {
             for (Usuarios itemFind : CapaDeDatos.CargarTXTDA.ListUsuarios) {
@@ -44,6 +45,6 @@ public class UsuariosDA {
             }
         }
         return false;
-    }                             
+    }
 
 }

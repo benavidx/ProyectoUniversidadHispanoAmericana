@@ -24,12 +24,13 @@ public class ManagerShop extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         enabledHeader(jLabelClientes);
-        enabledPanels(Clientes,OpcionesCliente,0);
-        getCurrentContentTable(0,false);
+        enabledPanels(Clientes, OpcionesCliente, 0);
+        getCurrentContentTable(0, false);
     }
     private boolean normalSize = true;
-    private int x,y;
+    private int x, y;
     private int TableActive = 0;
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -792,44 +793,44 @@ public class ManagerShop extends javax.swing.JFrame {
 
     private void jLabelSessionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelSessionMouseClicked
         enabledHeader(jLabelSession);
-        enabledPanels(Session,null,0);
-        getCurrentContentTable(6,false);
+        enabledPanels(Session, null, 0);
+        getCurrentContentTable(6, false);
     }//GEN-LAST:event_jLabelSessionMouseClicked
 
     private void jLabelDisponibilidadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelDisponibilidadMouseClicked
         enabledHeader(jLabelDisponibilidad);
-        enabledPanels(Disponibilidad,OpcionesDisponibilidad,5);
-        getCurrentContentTable(5,false);
+        enabledPanels(Disponibilidad, OpcionesDisponibilidad, 5);
+        getCurrentContentTable(5, false);
     }//GEN-LAST:event_jLabelDisponibilidadMouseClicked
 
     private void jLabelHistoricoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelHistoricoMouseClicked
         enabledHeader(jLabelHistorico);
-        enabledPanels(Historico,OpcionesHistorico,4);
-        getCurrentContentTable(4,false);
+        enabledPanels(Historico, OpcionesHistorico, 4);
+        getCurrentContentTable(4, false);
     }//GEN-LAST:event_jLabelHistoricoMouseClicked
 
     private void jLabelReservacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelReservacionMouseClicked
         enabledHeader(jLabelReservacion);
-        enabledPanels(Reservacion,OpcionesReservacion,3);
-        getCurrentContentTable(3,false);
+        enabledPanels(Reservacion, OpcionesReservacion, 3);
+        getCurrentContentTable(3, false);
     }//GEN-LAST:event_jLabelReservacionMouseClicked
 
     private void jLabelInventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelInventarioMouseClicked
         enabledHeader(jLabelInventario);
-        enabledPanels(Inventario,OpcionesInventario,2);
-        getCurrentContentTable(2,false);
+        enabledPanels(Inventario, OpcionesInventario, 2);
+        getCurrentContentTable(2, false);
     }//GEN-LAST:event_jLabelInventarioMouseClicked
 
     private void jLabelRRHHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelRRHHMouseClicked
         enabledHeader(jLabelRRHH);
-        enabledPanels(RRHH,OpcionesRRHH,1);
-        getCurrentContentTable(1,false);
+        enabledPanels(RRHH, OpcionesRRHH, 1);
+        getCurrentContentTable(1, false);
     }//GEN-LAST:event_jLabelRRHHMouseClicked
 
     private void jLabelClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelClientesMouseClicked
         enabledHeader(jLabelClientes);
-        enabledPanels(Clientes, OpcionesCliente,0);
-        getCurrentContentTable(0,false);
+        enabledPanels(Clientes, OpcionesCliente, 0);
+        getCurrentContentTable(0, false);
     }//GEN-LAST:event_jLabelClientesMouseClicked
 
     private void jPanel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MousePressed
@@ -877,17 +878,17 @@ public class ManagerShop extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseExited
-        if(normalSize){
+        if (normalSize) {
             jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/BOTONERA GRANDE/MAXIN-40-OUT.png"))); // NOI18N
-        }else{
+        } else {
             jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/BOTONERA GRANDE/REST-GRANDE-OUT.png"))); // NOI18N
         }
     }//GEN-LAST:event_jLabel3MouseExited
 
     private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
-        if(normalSize){
+        if (normalSize) {
             jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/BOTONERA GRANDE/MAXIN-40-IN.png"))); // NOI18N
-        }else{
+        } else {
             jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/BOTONERA GRANDE/REST-GRANDE-IN.png"))); // NOI18N
         }
     }//GEN-LAST:event_jLabel3MouseEntered
@@ -896,90 +897,89 @@ public class ManagerShop extends javax.swing.JFrame {
         if (normalSize) {
             this.setExtendedState(MAXIMIZED_BOTH);
             normalSize = false;
-        }else{
+        } else {
             this.setExtendedState(NORMAL);
             normalSize = true;
         }
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel19MouseClicked
-        getCurrentContentTable(0,false);
+        getCurrentContentTable(0, false);
     }//GEN-LAST:event_jLabel19MouseClicked
 
     private void jLabel21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel21MouseClicked
-        getCurrentContentTable(0,true);
+        getCurrentContentTable(0, true);
     }//GEN-LAST:event_jLabel21MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        if ( "".equals(ClienteCarnet.getText())
-            || "".equals(ClienteCedula.getText())
-            || "".equals(ClienteDireccion.getText())
-            || "".equals(ClienteFechaNacimiento.getText())
-            || "".equals(ClienteNombre.getText())
-            || "".equals(ClientePrimerApellido.getText())
-            || "".equals(ClienteSegundoApellido.getText())
-            || "".equals(ClienteProfesion.getText())) 
-        {
-         JOptionPane.showMessageDialog(this,"Debe de rellenar todos los campos para poder hacer la inserción");
-        }else{
-            jTable1.setModel(new ClientesBL().addCliente(new Entidades.Cliente(ClienteNombre.getText(), ClientePrimerApellido.getText(), ClienteSegundoApellido.getText(), ClienteFechaNacimiento.getText(), ClienteDireccion.getText(), ClienteProfesion.getText(), String.valueOf(ClienteGenero.getSelectedItem()), Integer.parseInt(ClienteCedula.getText()), Integer.parseInt(ClienteCarnet.getText()),ClienteEstado.isSelected())));
+        if ("".equals(ClienteCarnet.getText())
+                || "".equals(ClienteCedula.getText())
+                || "".equals(ClienteDireccion.getText())
+                || "".equals(ClienteFechaNacimiento.getText())
+                || "".equals(ClienteNombre.getText())
+                || "".equals(ClientePrimerApellido.getText())
+                || "".equals(ClienteSegundoApellido.getText())
+                || "".equals(ClienteProfesion.getText())) {
+            JOptionPane.showMessageDialog(this, "Debe de rellenar todos los campos para poder hacer la inserción");
+        } else {
+            jTable1.setModel(new ClientesBL().addCliente(new Entidades.Cliente(ClienteNombre.getText(), ClientePrimerApellido.getText(), ClienteSegundoApellido.getText(), ClienteFechaNacimiento.getText(), ClienteDireccion.getText(), ClienteProfesion.getText(), String.valueOf(ClienteGenero.getSelectedItem()), Integer.parseInt(ClienteCedula.getText()), Integer.parseInt(ClienteCarnet.getText()), ClienteEstado.isSelected())));
 
         }
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void ClienteFechaNacimientoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ClienteFechaNacimientoKeyReleased
-        try{
+        try {
             if (ClienteFechaNacimiento.getText().length() == 10) {
-            java.util.Date fechaActual = new java.util.Date();
-            java.text.SimpleDateFormat formato = new java.text.SimpleDateFormat("dd-MM-yyyy");
-            String hoy = formato.format(fechaActual);
-            String[] dat1 = ClienteFechaNacimiento.getText().split("-");
-            String[] dat2 = hoy.split("-");
-            int anos = Integer.parseInt(dat2[2]) - Integer.parseInt(dat1[2]);
-            int mes = Integer.parseInt(dat2[1]) - Integer.parseInt(dat1[1]);
-            if (mes < 0) {
-                anos = anos - 1;
-            } else if (mes == 0) {
-                int dia = Integer.parseInt(dat2[0]) - Integer.parseInt(dat1[0]);
-                if (dia > 0) {
+                java.util.Date fechaActual = new java.util.Date();
+                java.text.SimpleDateFormat formato = new java.text.SimpleDateFormat("dd-MM-yyyy");
+                String hoy = formato.format(fechaActual);
+                String[] dat1 = ClienteFechaNacimiento.getText().split("-");
+                String[] dat2 = hoy.split("-");
+                int anos = Integer.parseInt(dat2[2]) - Integer.parseInt(dat1[2]);
+                int mes = Integer.parseInt(dat2[1]) - Integer.parseInt(dat1[1]);
+                if (mes < 0) {
                     anos = anos - 1;
+                } else if (mes == 0) {
+                    int dia = Integer.parseInt(dat2[0]) - Integer.parseInt(dat1[0]);
+                    if (dia > 0) {
+                        anos = anos - 1;
+                    }
                 }
+                if (anos > 18) {
+                    ClienteEdad.setText("Tienes " + String.valueOf(anos) + " años, eres mayor de edad");
+                } else {
+                    ClienteEdad.setText("Tienes " + String.valueOf(anos) + " años, eres menor de edad");
+                }
+            } else {
+                ClienteEdad.setText("Formato no valido");
             }
-                if (anos>18) {
-                     ClienteEdad.setText("Tienes "+ String.valueOf(anos)+" años, eres mayor de edad");
-                }else{
-                    ClienteEdad.setText("Tienes "+ String.valueOf(anos)+" años, eres menor de edad");
-                }            
-        }else{
-            ClienteEdad.setText("Formato no valido");
-        }
-        }catch(Exception e){
+        } catch (Exception e) {
             ClienteEdad.setText("Formato no valido");
         }
     }//GEN-LAST:event_ClienteFechaNacimientoKeyReleased
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        switch(this.TableActive){
+        switch (this.TableActive) {
             case 0:
                 ClienteNombre.setText(String.valueOf(jTable1.getModel().getValueAt(jTable1.getSelectedRow(), 0)));
                 ClientePrimerApellido.setText(String.valueOf(jTable1.getModel().getValueAt(jTable1.getSelectedRow(), 1)));
                 ClienteSegundoApellido.setText(String.valueOf(jTable1.getModel().getValueAt(jTable1.getSelectedRow(), 2)));
                 ClienteFechaNacimiento.setText(String.valueOf(jTable1.getModel().getValueAt(jTable1.getSelectedRow(), 3)));
-                ClienteDireccion.setText(String.valueOf(jTable1.getModel().getValueAt(jTable1.getSelectedRow(), 4))); 
+                ClienteDireccion.setText(String.valueOf(jTable1.getModel().getValueAt(jTable1.getSelectedRow(), 4)));
                 ClienteProfesion.setText(String.valueOf(jTable1.getModel().getValueAt(jTable1.getSelectedRow(), 5)));
                 ClienteGenero.setSelectedIndex(0);
 //                ClienteCedula.getText()
 //                ClienteCarnet.getText()
 //                ClienteEstado.isSelected();
-            break;
+                break;
         }
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-        switch(this.TableActive){
+        switch (this.TableActive) {
             case 0:
-                jTable1.setModel(new ClientesBL().editItem( new Entidades.Cliente(ClienteNombre.getText(), ClientePrimerApellido.getText(), ClienteSegundoApellido.getText(), ClienteFechaNacimiento.getText(), ClienteDireccion.getText(), ClienteProfesion.getText(), String.valueOf(ClienteGenero.getSelectedItem()), Integer.parseInt(ClienteCedula.getText()), Integer.parseInt(ClienteCarnet.getText()),ClienteEstado.isSelected()),Integer.parseInt(ClienteCedula.getText())));
-            break;
+                jTable1.setModel(new ClientesBL().editItem(new Entidades.Cliente(ClienteNombre.getText(), ClientePrimerApellido.getText(), ClienteSegundoApellido.getText(), ClienteFechaNacimiento.getText(), ClienteDireccion.getText(), ClienteProfesion.getText(), String.valueOf(ClienteGenero.getSelectedItem()), Integer.parseInt(ClienteCedula.getText()), Integer.parseInt(ClienteCarnet.getText()), ClienteEstado.isSelected()), Integer.parseInt(ClienteCedula.getText())));
+                break;
         }
     }//GEN-LAST:event_jLabel7MouseClicked
 
@@ -995,15 +995,14 @@ public class ManagerShop extends javax.swing.JFrame {
         x = evt.getX();
         y = evt.getY();
     }
-    
-    private void Mover(java.awt.event.MouseEvent evt){
-        this.setLocation(this.getLocation().x + evt.getX()- x,this.getLocation().y+evt.getY()- y);
-    }  
-    
+
+    private void Mover(java.awt.event.MouseEvent evt) {
+        this.setLocation(this.getLocation().x + evt.getX() - x, this.getLocation().y + evt.getY() - y);
+    }
+
     private void enabledHeader(javax.swing.JLabel enabled) {
-        javax.swing.JLabel[] disabled = new javax.swing.JLabel[]
-            {jLabelClientes,jLabelRRHH,jLabelInventario,jLabelReservacion,jLabelHistorico,jLabelDisponibilidad,jLabelSession,};
-        for (JLabel Label:disabled) {
+        javax.swing.JLabel[] disabled = new javax.swing.JLabel[]{jLabelClientes, jLabelRRHH, jLabelInventario, jLabelReservacion, jLabelHistorico, jLabelDisponibilidad, jLabelSession,};
+        for (JLabel Label : disabled) {
             if (Label == enabled) {
                 Label.setForeground(new java.awt.Color(255, 255, 255));
                 Label.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -1015,37 +1014,34 @@ public class ManagerShop extends javax.swing.JFrame {
         }
     }
 
-    private void enabledPanels(javax.swing.JPanel Riboon,javax.swing.JPanel Controls, int TableActive) {
-        javax.swing.JPanel[] RiboonP = new javax.swing.JPanel[]
-            {Clientes,Disponibilidad,Historico,Inventario,RRHH,Reservacion,Session};
+    private void enabledPanels(javax.swing.JPanel Riboon, javax.swing.JPanel Controls, int TableActive) {
+        javax.swing.JPanel[] RiboonP = new javax.swing.JPanel[]{Clientes, Disponibilidad, Historico, Inventario, RRHH, Reservacion, Session};
         for (JPanel Panele : RiboonP) {
             if (Panele == Riboon) {
                 Panele.setVisible(true);
-            }else{
+            } else {
                 Panele.setVisible(false);
             }
         }
-        javax.swing.JPanel[] ControlsP = new javax.swing.JPanel[]
-            {OpcionesCliente,OpcionesDisponibilidad,OpcionesHistorico,OpcionesInventario,OpcionesRRHH,OpcionesReservacion};
+        javax.swing.JPanel[] ControlsP = new javax.swing.JPanel[]{OpcionesCliente, OpcionesDisponibilidad, OpcionesHistorico, OpcionesInventario, OpcionesRRHH, OpcionesReservacion};
         for (JPanel Contol : ControlsP) {
             if (Contol == Controls) {
                 Contol.setVisible(true);
-            }else{
+            } else {
                 Contol.setVisible(false);
             }
         }
-        
+
         this.TableActive = TableActive;
     }
-    
-    
+
     private void getCurrentContentTable(int i, boolean filtrado) {
-        switch(i){
+        switch (i) {
             case 0:
                 jTable1.setModel(new ClientesBL().getModelDataTable(filtrado));
-            break;
+                break;
         }
-        
+
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ClienteCarnet;

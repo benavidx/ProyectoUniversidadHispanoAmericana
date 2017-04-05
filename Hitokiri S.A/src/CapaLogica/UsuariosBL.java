@@ -14,13 +14,10 @@ import CapaDeDatos.UsuariosDA;
 public class UsuariosBL {
 
     UsuariosDA UsuariosDA;
+
     public UsuariosBL() {
         UsuariosDA = new UsuariosDA();
     }
-    
-    
-    
-
 
     public boolean QueryUser(String user, String password) {
         return UsuariosDA.QueryUser(user, password);

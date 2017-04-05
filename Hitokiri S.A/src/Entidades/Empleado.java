@@ -10,11 +10,12 @@ package Entidades;
  * @author Antonio
  */
 public class Empleado {
-    private String Nombre, Apellido1, Apellido2,FechaDeIngreso;
+
+    private String Nombre, Apellido1, Apellido2, FechaDeIngreso;
     private int Cedula, Identificador;
     private boolean Estado;
-    
-      public Empleado(String[] ObjectList) {
+
+    public Empleado(String[] ObjectList) {
         this.Nombre = ObjectList[0];
         this.Apellido1 = ObjectList[1];
         this.Apellido2 = ObjectList[2];
@@ -90,6 +91,4 @@ public class Empleado {
         this.Estado = Estado;
     }
 
- 
 }
-

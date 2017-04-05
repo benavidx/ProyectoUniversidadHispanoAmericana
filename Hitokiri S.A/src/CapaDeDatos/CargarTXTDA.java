@@ -5,7 +5,6 @@
  */
 package CapaDeDatos;
 
-
 import Entidades.Cliente;
 import Entidades.Empleado;
 import Entidades.Peliculas;
@@ -25,69 +24,68 @@ import java.util.logging.Logger;
  * @author Antonio
  */
 public class CargarTXTDA {
-    
+
     protected static ArrayList<Empleado> ListEmpleados = new ArrayList();
     protected static ArrayList<Cliente> ListClientes = new ArrayList();
     protected static ArrayList<Usuarios> ListUsuarios = new ArrayList();
     protected static ArrayList<Peliculas> ListPeliculas = new ArrayList();
     protected static ArrayList<Vacaciones> ListVacaciones = new ArrayList();
-    
+
     public CargarTXTDA() {
     }
+
     public CargarTXTDA(String s) {
-        
+
     }
-    
-    
-    
-    public void PrepararListas(String[] files) throws FileNotFoundException, IOException{
+
+    public void PrepararListas(String[] files) throws FileNotFoundException, IOException {
         for (int i = 0; i < files.length; i++) {
-            switch (i){
+            switch (i) {
                 case 0:
-                    rellenarListas(files[i],0);
-                break;
+                    rellenarListas(files[i], 0);
+                    break;
                 case 1:
-                     rellenarListas(files[i],1);
-                break;
+                    rellenarListas(files[i], 1);
+                    break;
                 case 2:
-                     rellenarListas(files[i],2);
-                break;
+                    rellenarListas(files[i], 2);
+                    break;
                 case 3:
-                     rellenarListas(files[i],3);
-                break;
+                    rellenarListas(files[i], 3);
+                    break;
                 case 4:
-                     rellenarListas(files[i],4);
-                break;
+                    rellenarListas(files[i], 4);
+                    break;
             }
         }
     }
-    
-    private void rellenarListas(String file,int ObjType){   
-        
+
+    private void rellenarListas(String file, int ObjType) {
+
         try {
             BufferedReader bf = new BufferedReader(new FileReader(new File(file)));
-            String bfRead="";
+            String bfRead = "";
             String[] arreglo;
-            while((bfRead = bf.readLine()) != null){
+            while ((bfRead = bf.readLine()) != null) {
                 arreglo = bfRead.split(";");
-                    switch(ObjType){
-                        case 0:
-                            ListEmpleados.add(new Empleado(arreglo));
+                switch (ObjType) {
+                    case 0:
+                        ListEmpleados.add(new Empleado(arreglo));
                         break;
-                        case 1:
-                            ListClientes.add(new Cliente(arreglo));
+                    case 1:
+                        ListClientes.add(new Cliente(arreglo));
                         break;
-                        case 2:
-                            ListUsuarios.add(new Usuarios(arreglo));
+                    case 2:
+                        ListUsuarios.add(new Usuarios(arreglo));
                         break;
-                        case 3:
-                            ListPeliculas.add(new Peliculas(arreglo));
+                    case 3:
+                        ListPeliculas.add(new Peliculas(arreglo));
                         break;
-                        case 4:
-                            ListVacaciones.add(new Vacaciones(arreglo));
+                    case 4:
+                        ListVacaciones.add(new Vacaciones(arreglo));
                         break;
 
-                    }
+                }
             }
             bf.close();
         } catch (IOException ex) {

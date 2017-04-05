@@ -10,11 +10,12 @@ package Entidades;
  * @author Antonio
  */
 public class Peliculas {
-    private String Descripcion,Genero;
+
+    private String Descripcion, Genero;
     private int IdPeliculas, cantidad;
     private boolean Estado;
 
-     public Peliculas(String[] ObjectList) {
+    public Peliculas(String[] ObjectList) {
         this.Descripcion = ObjectList[0];
         this.IdPeliculas = Integer.parseInt(ObjectList[1]);
         this.cantidad = Integer.parseInt(ObjectList[2]);
@@ -23,7 +24,7 @@ public class Peliculas {
     }
 
     public Peliculas() {
-         this.Descripcion = "";
+        this.Descripcion = "";
         this.IdPeliculas = 0;
         this.cantidad = 0;
         this.Genero = "";
@@ -70,6 +71,4 @@ public class Peliculas {
         this.Estado = Estado;
     }
 
- 
 }
-

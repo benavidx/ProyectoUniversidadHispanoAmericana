@@ -13,27 +13,26 @@ import Entidades.Cliente;
  * @author Antonio
  */
 public class ClientesBL {
+
     private final ClientesDA ClientesDA;
-    public ClientesBL(){
+
+    public ClientesBL() {
         ClientesDA = new ClientesDA();
     }
-    
-    
-    
-    
-    public javax.swing.table.DefaultTableModel getModelDataTable(boolean filtrado){
+
+    public javax.swing.table.DefaultTableModel getModelDataTable(boolean filtrado) {
         return ClientesDA.getModelDataTable(filtrado);
     }
-    
-       public javax.swing.table.DefaultTableModel addCliente(Cliente Cliente){
-          return ClientesDA.addCliente(Cliente);
+
+    public javax.swing.table.DefaultTableModel addCliente(Cliente Cliente) {
+        return ClientesDA.addCliente(Cliente);
     }
-       
-    public javax.swing.table.DefaultTableModel editItem(Cliente cliente ,int id) {    
+
+    public javax.swing.table.DefaultTableModel editItem(Cliente cliente, int id) {
         return ClientesDA.editItem(cliente, id);
     }
-    
-    public javax.swing.table.DefaultTableModel deleteItem(int id) {    
+
+    public javax.swing.table.DefaultTableModel deleteItem(int id) {
         return ClientesDA.deleteItem(id);
     }
 }
