@@ -47,7 +47,7 @@ public class VacacionesDA {
                 } else {
                     Model.addRow(//Agrego al model la fila
                             new Object[]{
-                                getDatosEmpleado(itemFind.getCedulaEmpleado(),NOMBRE_EMPLEADO),getDatosEmpleado(itemFind.getCedulaEmpleado(),APELLIDO_1_EMPLEADO),getDatosEmpleado(itemFind.getCedulaEmpleado(),APELLIDO_2_EMPLEADO),itemFind.getCedulaEmpleado(),itemFind.getIdVacaciones(),"Fecha de ingreso",getDatosEmpleado(itemFind.getCedulaEmpleado(),ESTADO_EMPLEADO)
+                                getDatosEmpleado(itemFind.getCedulaEmpleado(),NOMBRE_EMPLEADO),getDatosEmpleado(itemFind.getCedulaEmpleado(),APELLIDO_1_EMPLEADO),getDatosEmpleado(itemFind.getCedulaEmpleado(),APELLIDO_2_EMPLEADO),itemFind.getCedulaEmpleado(),itemFind.getIdVacaciones(),getFechaDeIngreso(itemFind),getDatosEmpleado(itemFind.getCedulaEmpleado(),ESTADO_EMPLEADO)
                             });
                 }
 
@@ -75,55 +75,41 @@ public class VacacionesDA {
        }
        return "NO ASIGNADO";
     }
-        
-    public void getFechaDeIngreso(Vacaciones itemFind){
+
+    public String getFechaDeIngreso(Vacaciones itemFind) {
         java.util.Calendar Solicitud = java.util.Calendar.getInstance();
         String[] FechaSolicitud = itemFind.getFechaSolicitud().split("-");
-        
-        Solicitud.set(Integer.parseInt(FechaSolicitud[2]), Integer.parseInt(FechaSolicitud[1]), Integer.parseInt(FechaSolicitud[0]));
-        
+        Solicitud.set(Integer.parseInt(FechaSolicitud[2]), Integer.parseInt(FechaSolicitud[1]) - 1, Integer.parseInt(FechaSolicitud[0]));
         Solicitud.add(java.util.Calendar.DAY_OF_YEAR, itemFind.getCantidadDeDias());
+        java.text.SimpleDateFormat Format = new java.text.SimpleDateFormat("dd-MM-yyyy");
+        String fechaConFormato = Format.format(Solicitud.getTime());
         
+        return fechaConFormato;
     }
     
     
-    public void getFechaDeIngreso(String fechaSolicitud, int cantidadDias){
-        java.util.Calendar Solicitud = java.util.Calendar.getInstance();
-        String[] FechaSolicitud = fechaSolicitud.split("-");
-        
-        Solicitud.set(Integer.parseInt(FechaSolicitud[2]), Integer.parseInt(FechaSolicitud[1])-1, Integer.parseInt(FechaSolicitud[0]));
-        System.out.println(FechaSolicitud[2]+"/"+FechaSolicitud[1]+"/"+FechaSolicitud[0]);
-        System.out.println(Solicitud.getTime());
-        Solicitud.add(java.util.Calendar.DAY_OF_YEAR, cantidadDias);
-        System.out.println(Solicitud.getTime());
-    }
-    
-    
-/////////////////////////////////////////////////////////////////////////////////
-    
-    
-    public javax.swing.table.DefaultTableModel addEmpleado(Empleado Empleado) {
+    public javax.swing.table.DefaultTableModel addEmpleado(Vacaciones vacaciones) {
 
-        if (Empleado != null) {
-            CapaDeDatos.CargarTXTDA.ListEmpleados.add(Empleado);
+        if (vacaciones != null) {
+            CapaDeDatos.CargarTXTDA.ListVacaciones.add(vacaciones);
             return getModelDataTable(false);
         }
         return null;
     }
 
-    public javax.swing.table.DefaultTableModel editItem(Empleado Empleado, int id) {
-        for (Empleado itemFind : CapaDeDatos.CargarTXTDA.ListEmpleados) {
-            if (itemFind.getCedula() == id) {
-                CapaDeDatos.CargarTXTDA.ListEmpleados.set(CapaDeDatos.CargarTXTDA.ListEmpleados.indexOf(itemFind), Empleado);
+    public javax.swing.table.DefaultTableModel editItem(Vacaciones vacaciones, int id) {
+        for (Vacaciones itemFind : CapaDeDatos.CargarTXTDA.ListVacaciones) {
+            if (itemFind.getIdVacaciones()== id) {
+                CapaDeDatos.CargarTXTDA.ListVacaciones.set(CapaDeDatos.CargarTXTDA.ListVacaciones.indexOf(itemFind), vacaciones);
             }
         }
         return getModelDataTable(false);
     }
 
     public javax.swing.table.DefaultTableModel deleteItem(int id) {
-        for (Empleado itemFind : CapaDeDatos.CargarTXTDA.ListEmpleados) {
-            if (itemFind.getCedula() == id) {
-                CapaDeDatos.CargarTXTDA.ListEmpleados.remove(itemFind);
+        for (Vacaciones itemFind : CapaDeDatos.CargarTXTDA.ListVacaciones) {
+            if (itemFind.getIdVacaciones()== id) {
+                CapaDeDatos.CargarTXTDA.ListVacaciones.remove(itemFind);
             }
         }
         return getModelDataTable(false);

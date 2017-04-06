@@ -426,7 +426,6 @@ public class UIMain extends javax.swing.JFrame {
                 new UIMain().setVisible(new UIMain().VerificarTxt());
             }
         });
-        new CapaDeDatos.VacacionesDA().getFechaDeIngreso("05-04-2017",30);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
