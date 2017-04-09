@@ -23,7 +23,7 @@ public class ClientesDA {
         if (filtrado) {
             Model = new javax.swing.table.DefaultTableModel(//Le asigno el valor
                     new Object[][]{},//Cargo las Filas vacias
-                    new String[]{"Nombre Completo", "Area de Trabajo", "Profesion", "Estado(Activo)"});//Cargo los encabezados de la tabla
+                    new String[]{"Nombre Completo","Profesion", "Estado(Activo)"});//Cargo los encabezados de la tabla
         } else {
             Model = new javax.swing.table.DefaultTableModel(//Le asigno el valor
                     new Object[][]{},//Cargo las Filas vacias
@@ -35,12 +35,12 @@ public class ClientesDA {
                 if (filtrado) {
                     Model.addRow(//Agrego al model la fila
                             new Object[]{
-                                itemFind.getNombre() + " " + itemFind.getApellido1() + " " + itemFind.getApellido2(), itemFind.getProfesion(), itemFind.getEstado(), itemFind.getDireccion()
+                                itemFind.getNombre() + " " + itemFind.getApellido1() + " " + itemFind.getApellido2(), itemFind.getProfesion(), getEstadoWithBoolean(itemFind.getEstado())
                             });
                 } else {
                     Model.addRow(//Agrego al model la fila
                             new Object[]{
-                                itemFind.getNombre(), itemFind.getApellido1(), itemFind.getApellido2(), itemFind.getFechaDeNacimiento(), itemFind.getDireccion(), itemFind.getProfesion(), itemFind.getCedula(), itemFind.getCarnet(), itemFind.getEstado(), itemFind.getGenero()
+                                itemFind.getNombre(), itemFind.getApellido1(), itemFind.getApellido2(), itemFind.getFechaDeNacimiento(), itemFind.getDireccion(), itemFind.getProfesion(), itemFind.getCedula(), itemFind.getCarnet(), getEstadoWithBoolean(itemFind.getEstado()), itemFind.getGenero()
 
                             });
                 }
@@ -74,5 +74,13 @@ public class ClientesDA {
             }
         }
         return getModelDataTable(false);
+    }
+    
+    public String getEstadoWithBoolean(boolean estado){
+        if (estado) {
+            return "Activo";
+        }else{
+            return "Inactivo";
+        }
     }
 }

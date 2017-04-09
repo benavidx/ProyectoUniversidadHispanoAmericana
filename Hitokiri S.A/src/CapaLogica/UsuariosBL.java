@@ -6,6 +6,7 @@
 package CapaLogica;
 
 import CapaDeDatos.UsuariosDA;
+import Entidades.Usuarios;
 
 /**
  *
@@ -23,4 +24,20 @@ public class UsuariosBL {
         return UsuariosDA.QueryUser(user, password);
     }
 
+    
+    public javax.swing.table.DefaultTableModel getModelDataTable(boolean Filter){
+        return UsuariosDA.getModelDataTable(Filter);
+    }
+    
+    public javax.swing.table.DefaultTableModel addUsuario(Usuarios User){
+        return UsuariosDA.addUsuario(User);
+    
+    }
+    
+    public javax.swing.table.DefaultTableModel editItem(Usuarios Usuario, int id) {
+        return UsuariosDA.editItem(Usuario, id);
+    }
+    public javax.swing.table.DefaultTableModel deleteItem(int id) {
+        return UsuariosDA.deleteItem(id);
+    }
 }

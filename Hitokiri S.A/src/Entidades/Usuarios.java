@@ -25,6 +25,18 @@ public class Usuarios {
         this.intentos = 0;
     }
 
+    public Usuarios(String Usuario, String Contraseña, String FechaDeIngreso, int identificador, int intentos, boolean Bloqueado, boolean Estado) {
+        this.Usuario = Usuario;
+        this.Contraseña = Contraseña;
+        this.FechaDeIngreso = FechaDeIngreso;
+        this.identificador = identificador;
+        this.intentos = intentos;
+        this.Bloqueado = Bloqueado;
+        this.Estado = Estado;
+    }
+    
+    
+
     public Usuarios() {
         this.Usuario = "";
         this.Contraseña = "";
