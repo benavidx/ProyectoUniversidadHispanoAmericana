@@ -22,7 +22,7 @@ public class Empleado {
         this.AreaDeTrabajo = ObjectList[3];
         this.FechaDeIngreso = ObjectList[4];
         this.Cedula = Integer.parseInt(ObjectList[5]);
-        this.Identificador = Integer.parseInt(ObjectList[7]);
+        this.Identificador = Integer.parseInt(ObjectList[6]);
         this.Estado = Boolean.parseBoolean(ObjectList[7]);
     }
 
