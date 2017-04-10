@@ -71,6 +71,7 @@ public class ClientesDA {
         for (Cliente itemFind : CapaDeDatos.CargarTXTDA.ListClientes) {
             if (itemFind.getCedula() == id) {
                 CapaDeDatos.CargarTXTDA.ListClientes.remove(itemFind);
+                break;
             }
         }
         return getModelDataTable(false);

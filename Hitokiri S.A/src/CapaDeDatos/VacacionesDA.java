@@ -33,11 +33,10 @@ public class VacacionesDA {
                 new Object[][]{},//Cargo las Filas vacias
                 new String[]{"ID", "Cedula", "Nombre Completo", "Area de Trabajo", "Fecha de Solicitud", "Cantidad de dias", "Fecha de Ingreso", "Estado"});//Cargo los encabezados de la tabla
         if (CapaDeDatos.CargarTXTDA.ListVacaciones != null) {//Pregunto si la lista se encuentra vacia
-
             for (Vacaciones itemFind : CapaDeDatos.CargarTXTDA.ListVacaciones) {
                 Model.addRow(//Agrego al model la fila
                         new Object[]{
-                            itemFind.getIdVacaciones(),itemFind.getCedulaEmpleado(),getDatosEmpleado(itemFind.getCedulaEmpleado(), NOMBRE_COMPLETO_EMPLEADO), getDatosEmpleado(itemFind.getCedulaEmpleado(), AREA_DE_TRABAJO),itemFind.getFechaSolicitud(),getFechaDeIngreso(itemFind),getEstadoWithBoolean(Boolean.parseBoolean(getDatosEmpleado(itemFind.getCedulaEmpleado(), ESTADO_EMPLEADO)))
+                            itemFind.getIdVacaciones(),itemFind.getCedulaEmpleado(),getDatosEmpleado(itemFind.getCedulaEmpleado(), NOMBRE_COMPLETO_EMPLEADO), getDatosEmpleado(itemFind.getCedulaEmpleado(), AREA_DE_TRABAJO),itemFind.getFechaSolicitud(),itemFind.getCantidadDeDias(),getFechaDeIngreso(itemFind),getEstadoWithBoolean(Boolean.parseBoolean(getDatosEmpleado(itemFind.getCedulaEmpleado(), ESTADO_EMPLEADO)))
                         });
             }
         }

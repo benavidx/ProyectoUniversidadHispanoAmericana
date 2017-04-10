@@ -37,6 +37,19 @@ public class Empleado {
         this.Estado = false;
     }
 
+    public Empleado(String Nombre, String Apellido1, String Apellido2, String FechaDeIngreso, String AreaDeTrabajo, int Cedula, int Identificador, boolean Estado) {
+        this.Nombre = Nombre;
+        this.Apellido1 = Apellido1;
+        this.Apellido2 = Apellido2;
+        this.FechaDeIngreso = FechaDeIngreso;
+        this.AreaDeTrabajo = AreaDeTrabajo;
+        this.Cedula = Cedula;
+        this.Identificador = Identificador;
+        this.Estado = Estado;
+    }
+    
+    
+
     public String getAreaDeTrabajo() {
         return AreaDeTrabajo;
     }

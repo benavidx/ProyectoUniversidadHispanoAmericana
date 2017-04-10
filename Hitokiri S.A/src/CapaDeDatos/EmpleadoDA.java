@@ -37,7 +37,7 @@ public class EmpleadoDA {
         } else {
             Model = new javax.swing.table.DefaultTableModel(//Le asigno el valor
                     new Object[][]{},//Cargo las Filas vacias
-                    new String[]{"Nombre", "Apellido 1", "Apellido 2", "Cedula", "Identificador", "Fecha de Ingreso", "Estado"});//Cargo los encabezados de la tabla
+                    new String[]{"Nombre", "Primer Apellido", "Segundo Apellido", "Cedula", "Identificador", "Fecha de Ingreso", "Estado"});//Cargo los encabezados de la tabla
         }
 
         if (CapaDeDatos.CargarTXTDA.ListEmpleados != null) {//Pregunto si la lista se encuentra vacia
@@ -45,12 +45,12 @@ public class EmpleadoDA {
                 if (filtrado) {
                     Model.addRow(//Agrego al model la fila
                             new Object[]{
-                                itemFind.getNombre() + " " + itemFind.getApellido1() + " " + itemFind.getApellido2(), itemFind.getCedula(), itemFind.getEstado()
+                                itemFind.getNombre() + " " + itemFind.getApellido1() + " " + itemFind.getApellido2(), itemFind.getCedula(), itemFind.getFechaDeIngreso(),getEstadoWithBoolean(itemFind.getEstado())
                             });
                 } else {
                     Model.addRow(//Agrego al model la fila
                             new Object[]{
-                                itemFind.getNombre(), itemFind.getApellido1(), itemFind.getApellido2(), itemFind.getFechaDeIngreso(), itemFind.getIdentificador(), itemFind.getCedula(), itemFind.getEstado()
+                                itemFind.getNombre(), itemFind.getApellido1(), itemFind.getApellido2(),itemFind.getCedula(), itemFind.getIdentificador(),  itemFind.getFechaDeIngreso(),getEstadoWithBoolean(itemFind.getEstado())
 
                             });
                 }
@@ -70,7 +70,7 @@ public class EmpleadoDA {
 
     public javax.swing.table.DefaultTableModel editItem(Empleado Empleado, int id) {
         for (Empleado itemFind : CapaDeDatos.CargarTXTDA.ListEmpleados) {
-            if (itemFind.getCedula() == id) {
+            if (itemFind.getIdentificador()== id) {
                 CapaDeDatos.CargarTXTDA.ListEmpleados.set(CapaDeDatos.CargarTXTDA.ListEmpleados.indexOf(itemFind), Empleado);
             }
         }
@@ -79,10 +79,19 @@ public class EmpleadoDA {
 
     public javax.swing.table.DefaultTableModel deleteItem(int id) {
         for (Empleado itemFind : CapaDeDatos.CargarTXTDA.ListEmpleados) {
-            if (itemFind.getCedula() == id) {
+            if (itemFind.getIdentificador() == id) {
                 CapaDeDatos.CargarTXTDA.ListEmpleados.remove(itemFind);
+                break;
             }
         }
         return getModelDataTable(false);
     }
+    
+    public String getEstadoWithBoolean(boolean estado){
+            if (estado) {
+                return "Activo";
+            }else{
+                return "Inactivo";
+            }
+        }
 }

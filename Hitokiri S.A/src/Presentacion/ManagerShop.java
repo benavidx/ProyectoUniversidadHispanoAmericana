@@ -11,6 +11,7 @@ import CapaLogica.EmpleadoBL;
 import CapaLogica.RRHHBL;
 import CapaLogica.UsuariosBL;
 import CapaLogica.VacacionesBL;
+import Entidades.Empleado;
 import Entidades.Usuarios;
 import java.awt.event.MouseEvent;
 import javax.swing.JLabel;
@@ -131,9 +132,11 @@ public class ManagerShop extends javax.swing.JFrame {
         EmpleadoPrimerApellido = new javax.swing.JTextField();
         EmpleadoNombre = new javax.swing.JTextField();
         EmpleadoSegundoApellido = new javax.swing.JTextField();
-        EmpleadFechaDeIngreso = new javax.swing.JTextField();
+        EmpleadoFechaDeIngreso = new javax.swing.JTextField();
         EmpleadoCedula = new javax.swing.JTextField();
         EmpleadoActivo = new javax.swing.JCheckBox();
+        jLabel33 = new javax.swing.JLabel();
+        EmpleadoAreaDeTrabajo = new javax.swing.JTextField();
         OpcionesRRHH_Vacaciones = new javax.swing.JPanel();
         OpcionesInventario = new javax.swing.JPanel();
         OpcionesReservacion = new javax.swing.JPanel();
@@ -889,7 +892,7 @@ public class ManagerShop extends javax.swing.JFrame {
 
         EmpleadoSegundoApellido.setToolTipText("");
 
-        EmpleadFechaDeIngreso.setToolTipText("");
+        EmpleadoFechaDeIngreso.setToolTipText("");
 
         EmpleadoCedula.setToolTipText("");
         EmpleadoCedula.addActionListener(new java.awt.event.ActionListener() {
@@ -900,6 +903,10 @@ public class ManagerShop extends javax.swing.JFrame {
 
         EmpleadoActivo.setBackground(new java.awt.Color(255, 255, 255));
         EmpleadoActivo.setText("Activo");
+
+        jLabel33.setText("Area de Trabajo:");
+
+        EmpleadoAreaDeTrabajo.setToolTipText("");
 
         javax.swing.GroupLayout OpcionesRRHH_EmpleadosLayout = new javax.swing.GroupLayout(OpcionesRRHH_Empleados);
         OpcionesRRHH_Empleados.setLayout(OpcionesRRHH_EmpleadosLayout);
@@ -918,17 +925,24 @@ public class ManagerShop extends javax.swing.JFrame {
                     .addComponent(EmpleadoPrimerApellido, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(EmpleadoNombre, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(EmpleadoID, javax.swing.GroupLayout.Alignment.LEADING))
-                .addGap(36, 36, 36)
-                .addGroup(OpcionesRRHH_EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel31)
-                    .addComponent(jLabel29)
-                    .addComponent(jLabel32))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(OpcionesRRHH_EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(EmpleadoActivo)
-                    .addGroup(OpcionesRRHH_EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(EmpleadoCedula)
-                        .addComponent(EmpleadFechaDeIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(OpcionesRRHH_EmpleadosLayout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addGroup(OpcionesRRHH_EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel31)
+                            .addComponent(jLabel29)
+                            .addComponent(jLabel33))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(OpcionesRRHH_EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(OpcionesRRHH_EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(EmpleadoCedula)
+                                .addComponent(EmpleadoFechaDeIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(EmpleadoAreaDeTrabajo, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(OpcionesRRHH_EmpleadosLayout.createSequentialGroup()
+                        .addGap(88, 88, 88)
+                        .addComponent(jLabel32)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(EmpleadoActivo)))
                 .addContainerGap(397, Short.MAX_VALUE))
         );
         OpcionesRRHH_EmpleadosLayout.setVerticalGroup(
@@ -946,18 +960,21 @@ public class ManagerShop extends javax.swing.JFrame {
                     .addComponent(EmpleadoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(OpcionesRRHH_EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel31)
-                        .addComponent(EmpleadFechaDeIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(EmpleadoFechaDeIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(OpcionesRRHH_EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel27)
                     .addComponent(EmpleadoPrimerApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(EmpleadoActivo)
-                    .addComponent(jLabel32))
+                    .addComponent(jLabel33)
+                    .addComponent(EmpleadoAreaDeTrabajo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(OpcionesRRHH_EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
-                    .addComponent(EmpleadoSegundoApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(146, Short.MAX_VALUE))
+                    .addComponent(EmpleadoSegundoApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(OpcionesRRHH_EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(EmpleadoActivo)
+                        .addComponent(jLabel32)))
+                .addContainerGap(144, Short.MAX_VALUE))
         );
 
         OpcionesRRHH_Vacaciones.setBackground(new java.awt.Color(255, 255, 255));
@@ -1160,8 +1177,16 @@ public class ManagerShop extends javax.swing.JFrame {
     private void jLabelRRHHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelRRHHMouseClicked
         enabledHeader(jLabelRRHH);
         enabledPanels(RRHH, OpcionesRRHH, 1);
-        getCurrentContentTable(1, false);
         TableActive=1;
+        
+        if (RrhhBaseDeDatos.getSelectedIndex()==0) {
+            getCurrentContentTable(1, false);
+            OpcionesRRHH_Usuarios.setVisible(true);
+            OpcionesRRHH_Empleados.setVisible(false);
+            OpcionesRRHH_Vacaciones.setVisible(false);   
+            CompleteListRRHH.setVisible(false);
+            FilterListRRHH.setVisible(false);
+        }
     }//GEN-LAST:event_jLabelRRHHMouseClicked
 
     private void jLabelClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelClientesMouseClicked
@@ -1292,6 +1317,15 @@ public class ManagerShop extends javax.swing.JFrame {
                 UsuarioBloqueado.setSelected(getBloqueadoWithString(String.valueOf(jTable1.getModel().getValueAt(jTable1.getSelectedRow(), 4))));
                 UsuarioEstado.setSelected(getEstadoWithString(String.valueOf(jTable1.getModel().getValueAt(jTable1.getSelectedRow(), 5))));
                 break;
+            case 2:
+                EmpleadoNombre.setText(String.valueOf(jTable1.getModel().getValueAt(jTable1.getSelectedRow(), 0)));
+                EmpleadoPrimerApellido.setText(String.valueOf(jTable1.getModel().getValueAt(jTable1.getSelectedRow(), 1)));
+                EmpleadoSegundoApellido.setText(String.valueOf(jTable1.getModel().getValueAt(jTable1.getSelectedRow(), 2)));
+                EmpleadoCedula.setText(String.valueOf(jTable1.getModel().getValueAt(jTable1.getSelectedRow(), 3)));
+                EmpleadoID.setText(String.valueOf(jTable1.getModel().getValueAt(jTable1.getSelectedRow(), 4)));
+                EmpleadoFechaDeIngreso.setText(String.valueOf(jTable1.getModel().getValueAt(jTable1.getSelectedRow(), 5)));
+                EmpleadoActivo.setSelected(getEstadoWithString(String.valueOf(jTable1.getModel().getValueAt(jTable1.getSelectedRow(), 6))));
+            break;
             
         }
     }//GEN-LAST:event_jTable1MouseClicked
@@ -1321,6 +1355,28 @@ public class ManagerShop extends javax.swing.JFrame {
                 }
             break;
             case 1: 
+               if ("".equals(EmpleadoNombre.getText()) ||
+                    "".equals(EmpleadoPrimerApellido.getText()) ||
+                    "".equals(EmpleadoSegundoApellido.getText()) ||
+                    "".equals(EmpleadoFechaDeIngreso.getText()) ||
+                    "".equals(EmpleadoCedula.getText()) ||
+                    "".equals(EmpleadoAreaDeTrabajo.getText()) ||
+                    "".equals(EmpleadoID.getText())){
+                        JOptionPane.showMessageDialog(this, "Debe de rellenar todos los campos para poder hacer la inserción");
+                }else{
+                   jTable1.setModel(new EmpleadoBL().addCliente(
+                           new Empleado(
+                                   EmpleadoNombre.getText(),
+                                   EmpleadoPrimerApellido.getText(),
+                                   EmpleadoSegundoApellido.getText(),
+                                   EmpleadoFechaDeIngreso.getText(),
+                                   EmpleadoAreaDeTrabajo.getText(),
+                                   Integer.parseInt(EmpleadoCedula.getText()),
+                                   Integer.parseInt(EmpleadoID.getText()),
+                                   EmpleadoActivo.isSelected()
+                           )
+                   ));
+                }
                 
             break;
             case 2: 
@@ -1342,6 +1398,22 @@ public class ManagerShop extends javax.swing.JFrame {
                         UsuarioEstado.isSelected()
                 ), Integer.parseInt(UsuarioID.getText())));
                 break;
+            case 1:
+                   jTable1.setModel(new EmpleadoBL().editItem(
+                           new Empleado(
+                                   EmpleadoNombre.getText(),
+                                   EmpleadoPrimerApellido.getText(),
+                                   EmpleadoSegundoApellido.getText(),
+                                   EmpleadoFechaDeIngreso.getText(),
+                                   EmpleadoAreaDeTrabajo.getText(),
+                                   Integer.parseInt(EmpleadoCedula.getText()),
+                                   Integer.parseInt(EmpleadoID.getText()),
+                                   EmpleadoActivo.isSelected()
+                           ),Integer.parseInt(EmpleadoID.getText())
+                   ));
+            break;
+            case 2:
+            break;
         }
     }//GEN-LAST:event_EditRRHHMouseClicked
 
@@ -1351,7 +1423,7 @@ public class ManagerShop extends javax.swing.JFrame {
                 jTable1.setModel(new UsuariosBL().deleteItem(Integer.parseInt(UsuarioID.getText())));
                 break;
             case 1:
-                //jTable1.setModel(new EmpleadoBL().deleteItem(Integer.parseInt(UsuarioID.getText())));
+                jTable1.setModel(new EmpleadoBL().deleteItem(Integer.parseInt(EmpleadoID.getText())));
                 break;
             case 2:
                 //jTable1.setModel(new VacacionesBL().(Integer.parseInt(UsuarioID.getText())));
@@ -1360,11 +1432,25 @@ public class ManagerShop extends javax.swing.JFrame {
     }//GEN-LAST:event_DeleteRRHHMouseClicked
 
     private void CompleteListRRHHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CompleteListRRHHMouseClicked
-        // TODO add your handling code here:
+        switch(RrhhBaseDeDatos.getSelectedIndex()){
+            case 1:
+                getCurrentContentTable(2,false);
+            break;
+            case 2:
+                getCurrentContentTable(3,false);
+            break;
+        }
     }//GEN-LAST:event_CompleteListRRHHMouseClicked
 
     private void FilterListRRHHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FilterListRRHHMouseClicked
-        // TODO add your handling code here:
+                switch(RrhhBaseDeDatos.getSelectedIndex()){
+            case 1:
+                getCurrentContentTable(2,true);
+            break;
+            case 2:
+                getCurrentContentTable(3,true);
+            break;
+        }
     }//GEN-LAST:event_FilterListRRHHMouseClicked
 
     private void RrhhBaseDeDatosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_RrhhBaseDeDatosItemStateChanged
@@ -1376,12 +1462,16 @@ public class ManagerShop extends javax.swing.JFrame {
             EditRRHH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/BOTONERA GRANDE/toolBar/Edit User Male_30px_1.png")));
             DeleteRRHH.setText("Eliminar Usuario");
             DeleteRRHH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/BOTONERA GRANDE/toolBar/Remove User Male_30px.png")));
-
+            CompleteListRRHH.setVisible(false);
+            FilterListRRHH.setVisible(false);
+            
             OpcionesRRHH_Usuarios.setVisible(true);
             OpcionesRRHH_Empleados.setVisible(false);
             OpcionesRRHH_Vacaciones.setVisible(false);
             
+            getCurrentContentTable(1, false);
             TableActive=1;
+            
             break;
             case 1:
             addRRHH.setText("Agregar Empleado");
@@ -1390,10 +1480,14 @@ public class ManagerShop extends javax.swing.JFrame {
             EditRRHH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/BOTONERA GRANDE/toolBar/Edit User Male_30px_1.png")));
             DeleteRRHH.setText("Eliminar Empleado");
             DeleteRRHH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/BOTONERA GRANDE/toolBar/Remove User Male_30px.png")));
-
+            CompleteListRRHH.setVisible(true);
+            FilterListRRHH.setVisible(true);
+            
             OpcionesRRHH_Usuarios.setVisible(false);
             OpcionesRRHH_Empleados.setVisible(true);
             OpcionesRRHH_Vacaciones.setVisible(false);
+            
+            getCurrentContentTable(2, false);
             TableActive=2;
             break;
             case 2:
@@ -1403,11 +1497,14 @@ public class ManagerShop extends javax.swing.JFrame {
             EditRRHH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/BOTONERA GRANDE/toolBar/Edit Vacation Male_30px_1.png")));
             DeleteRRHH.setText("Eliminar Vacaiones");
             DeleteRRHH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/res/icons/BOTONERA GRANDE/toolBar/Remove Vacation Male_30px_1.png")));
-
+            CompleteListRRHH.setVisible(true);
+            FilterListRRHH.setVisible(true);
+            
             OpcionesRRHH_Usuarios.setVisible(false);
             OpcionesRRHH_Empleados.setVisible(false);
             OpcionesRRHH_Vacaciones.setVisible(true);
             
+            getCurrentContentTable(3, false);
             TableActive=3;
             break;
         }
@@ -1469,6 +1566,13 @@ public class ManagerShop extends javax.swing.JFrame {
             case 1:
                 jTable1.setModel(new UsuariosBL().getModelDataTable(filtrado));
                 break;
+            case 2:
+                jTable1.setModel(new EmpleadoBL().getModelDataTable(filtrado));
+                break;
+            case 3:
+                jTable1.setModel(new VacacionesBL().getModelDataTable(filtrado));
+                break;
+                
         }
 
     }
@@ -1542,9 +1646,10 @@ public class ManagerShop extends javax.swing.JFrame {
     private javax.swing.JLabel DeleteRRHH;
     private javax.swing.JPanel Disponibilidad;
     private javax.swing.JLabel EditRRHH;
-    private javax.swing.JTextField EmpleadFechaDeIngreso;
     private javax.swing.JCheckBox EmpleadoActivo;
+    private javax.swing.JTextField EmpleadoAreaDeTrabajo;
     private javax.swing.JTextField EmpleadoCedula;
+    private javax.swing.JTextField EmpleadoFechaDeIngreso;
     private javax.swing.JTextField EmpleadoID;
     private javax.swing.JTextField EmpleadoNombre;
     private javax.swing.JTextField EmpleadoPrimerApellido;
@@ -1598,6 +1703,7 @@ public class ManagerShop extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

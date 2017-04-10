@@ -102,6 +102,7 @@ public class UsuariosDA {
         for (Usuarios itemFind : CapaDeDatos.CargarTXTDA.ListUsuarios) {
             if (itemFind.getIdentificador()== id) {
                 CapaDeDatos.CargarTXTDA.ListUsuarios.remove(itemFind);
+                break;
             }
         }
         return getModelDataTable(false);
