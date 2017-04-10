@@ -7,8 +7,10 @@ package Presentacion;
 
 import CapaDeDatos.UsuariosDA;
 import CapaLogica.ClientesBL;
+import CapaLogica.EmpleadoBL;
 import CapaLogica.RRHHBL;
 import CapaLogica.UsuariosBL;
+import CapaLogica.VacacionesBL;
 import Entidades.Usuarios;
 import java.awt.event.MouseEvent;
 import javax.swing.JLabel;
@@ -118,6 +120,20 @@ public class ManagerShop extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         UsuarioID = new javax.swing.JTextField();
         OpcionesRRHH_Empleados = new javax.swing.JPanel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        EmpleadoID = new javax.swing.JTextField();
+        EmpleadoPrimerApellido = new javax.swing.JTextField();
+        EmpleadoNombre = new javax.swing.JTextField();
+        EmpleadoSegundoApellido = new javax.swing.JTextField();
+        EmpleadFechaDeIngreso = new javax.swing.JTextField();
+        EmpleadoCedula = new javax.swing.JTextField();
+        EmpleadoActivo = new javax.swing.JCheckBox();
         OpcionesRRHH_Vacaciones = new javax.swing.JPanel();
         OpcionesInventario = new javax.swing.JPanel();
         OpcionesReservacion = new javax.swing.JPanel();
@@ -851,15 +867,97 @@ public class ManagerShop extends javax.swing.JFrame {
         OpcionesRRHH_Empleados.setBackground(new java.awt.Color(255, 255, 255));
         OpcionesRRHH_Empleados.setPreferredSize(new java.awt.Dimension(0, 264));
 
+        jLabel26.setText("Nombre:");
+
+        jLabel27.setText("Primer Apellido:");
+
+        jLabel28.setText("Segundo Apellido:");
+
+        jLabel29.setText("Cedula:");
+
+        jLabel30.setText("ID:");
+
+        jLabel31.setText("Fecha de Ingreso:");
+
+        jLabel32.setText("Estado:");
+
+        EmpleadoID.setToolTipText("");
+
+        EmpleadoPrimerApellido.setToolTipText("");
+
+        EmpleadoNombre.setToolTipText("");
+
+        EmpleadoSegundoApellido.setToolTipText("");
+
+        EmpleadFechaDeIngreso.setToolTipText("");
+
+        EmpleadoCedula.setToolTipText("");
+        EmpleadoCedula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EmpleadoCedulaActionPerformed(evt);
+            }
+        });
+
+        EmpleadoActivo.setBackground(new java.awt.Color(255, 255, 255));
+        EmpleadoActivo.setText("Activo");
+
         javax.swing.GroupLayout OpcionesRRHH_EmpleadosLayout = new javax.swing.GroupLayout(OpcionesRRHH_Empleados);
         OpcionesRRHH_Empleados.setLayout(OpcionesRRHH_EmpleadosLayout);
         OpcionesRRHH_EmpleadosLayout.setHorizontalGroup(
             OpcionesRRHH_EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1024, Short.MAX_VALUE)
+            .addGroup(OpcionesRRHH_EmpleadosLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(OpcionesRRHH_EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel27)
+                    .addComponent(jLabel26)
+                    .addComponent(jLabel28)
+                    .addComponent(jLabel30))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(OpcionesRRHH_EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(EmpleadoSegundoApellido, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
+                    .addComponent(EmpleadoPrimerApellido, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(EmpleadoNombre, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(EmpleadoID, javax.swing.GroupLayout.Alignment.LEADING))
+                .addGap(36, 36, 36)
+                .addGroup(OpcionesRRHH_EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel31)
+                    .addComponent(jLabel29)
+                    .addComponent(jLabel32))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(OpcionesRRHH_EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(EmpleadoActivo)
+                    .addGroup(OpcionesRRHH_EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(EmpleadoCedula)
+                        .addComponent(EmpleadFechaDeIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(397, Short.MAX_VALUE))
         );
         OpcionesRRHH_EmpleadosLayout.setVerticalGroup(
             OpcionesRRHH_EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
+            .addGroup(OpcionesRRHH_EmpleadosLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(OpcionesRRHH_EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel30)
+                    .addComponent(EmpleadoID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel29)
+                    .addComponent(EmpleadoCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(OpcionesRRHH_EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel26)
+                    .addComponent(EmpleadoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(OpcionesRRHH_EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel31)
+                        .addComponent(EmpleadFechaDeIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(OpcionesRRHH_EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel27)
+                    .addComponent(EmpleadoPrimerApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EmpleadoActivo)
+                    .addComponent(jLabel32))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(OpcionesRRHH_EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel28)
+                    .addComponent(EmpleadoSegundoApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(146, Short.MAX_VALUE))
         );
 
         OpcionesRRHH_Vacaciones.setBackground(new java.awt.Color(255, 255, 255));
@@ -1194,6 +1292,7 @@ public class ManagerShop extends javax.swing.JFrame {
                 UsuarioBloqueado.setSelected(getBloqueadoWithString(String.valueOf(jTable1.getModel().getValueAt(jTable1.getSelectedRow(), 4))));
                 UsuarioEstado.setSelected(getEstadoWithString(String.valueOf(jTable1.getModel().getValueAt(jTable1.getSelectedRow(), 5))));
                 break;
+            
         }
     }//GEN-LAST:event_jTable1MouseClicked
 
@@ -1251,6 +1350,12 @@ public class ManagerShop extends javax.swing.JFrame {
             case 0:
                 jTable1.setModel(new UsuariosBL().deleteItem(Integer.parseInt(UsuarioID.getText())));
                 break;
+            case 1:
+                //jTable1.setModel(new EmpleadoBL().deleteItem(Integer.parseInt(UsuarioID.getText())));
+                break;
+            case 2:
+                //jTable1.setModel(new VacacionesBL().(Integer.parseInt(UsuarioID.getText())));
+                break;
         }
     }//GEN-LAST:event_DeleteRRHHMouseClicked
 
@@ -1307,6 +1412,10 @@ public class ManagerShop extends javax.swing.JFrame {
             break;
         }
     }//GEN-LAST:event_RrhhBaseDeDatosItemStateChanged
+
+    private void EmpleadoCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadoCedulaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EmpleadoCedulaActionPerformed
 
     private void setCurrentLocation(MouseEvent evt) {
         x = evt.getX();
@@ -1433,6 +1542,13 @@ public class ManagerShop extends javax.swing.JFrame {
     private javax.swing.JLabel DeleteRRHH;
     private javax.swing.JPanel Disponibilidad;
     private javax.swing.JLabel EditRRHH;
+    private javax.swing.JTextField EmpleadFechaDeIngreso;
+    private javax.swing.JCheckBox EmpleadoActivo;
+    private javax.swing.JTextField EmpleadoCedula;
+    private javax.swing.JTextField EmpleadoID;
+    private javax.swing.JTextField EmpleadoNombre;
+    private javax.swing.JTextField EmpleadoPrimerApellido;
+    private javax.swing.JTextField EmpleadoSegundoApellido;
     private javax.swing.JLabel FilterListRRHH;
     private javax.swing.JPanel Historico;
     private javax.swing.JPanel Inventario;
@@ -1474,7 +1590,14 @@ public class ManagerShop extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

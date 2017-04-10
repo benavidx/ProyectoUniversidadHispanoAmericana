@@ -1,2 +1,2 @@
-Antonio;Benavides;Hernandez;31/12/1992;402160992;11;true
-Felipe;Valerio;Herrera;31/12/1992;402160993;11;true
+Antonio;Benavides;Hernandez;Cajas;31/12/1992;402160992;11;true
+Felipe;Valerio;Herrera;Administrador;31/12/1992;402160993;11;true

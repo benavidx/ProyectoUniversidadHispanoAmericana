@@ -11,7 +11,7 @@ package Entidades;
  */
 public class Empleado {
 
-    private String Nombre, Apellido1, Apellido2, FechaDeIngreso;
+    private String Nombre, Apellido1, Apellido2, FechaDeIngreso,AreaDeTrabajo;
     private int Cedula, Identificador;
     private boolean Estado;
 
@@ -19,21 +19,31 @@ public class Empleado {
         this.Nombre = ObjectList[0];
         this.Apellido1 = ObjectList[1];
         this.Apellido2 = ObjectList[2];
-        this.FechaDeIngreso = ObjectList[3];
-        this.Cedula = Integer.parseInt(ObjectList[4]);
-        this.Identificador = Integer.parseInt(ObjectList[5]);
-        this.Estado = Boolean.parseBoolean(ObjectList[6]);
+        this.AreaDeTrabajo = ObjectList[3];
+        this.FechaDeIngreso = ObjectList[4];
+        this.Cedula = Integer.parseInt(ObjectList[5]);
+        this.Identificador = Integer.parseInt(ObjectList[7]);
+        this.Estado = Boolean.parseBoolean(ObjectList[7]);
     }
 
     public Empleado() {
         this.Nombre = "";
         this.Apellido1 = "";
         this.Apellido2 = "";
+        this.AreaDeTrabajo="";
         this.FechaDeIngreso = "";
         this.Cedula = 0;
         this.Identificador = 0;
         this.Estado = false;
     }
+
+    public String getAreaDeTrabajo() {
+        return AreaDeTrabajo;
+    }
+
+    public void setAreaDeTrabajo(String AreaDeTrabajo) {
+        this.AreaDeTrabajo = AreaDeTrabajo;
+    }  
 
     public String getNombre() {
         return Nombre;

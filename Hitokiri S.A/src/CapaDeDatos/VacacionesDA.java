@@ -7,6 +7,7 @@ package CapaDeDatos;
 
 import Entidades.Vacaciones;
 import Entidades.Empleado;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -19,6 +20,7 @@ public class VacacionesDA {
     private final int APELLIDO_1_EMPLEADO = 2;
     private final int APELLIDO_2_EMPLEADO = 3;
     private final int ESTADO_EMPLEADO = 4;
+    private final int AREA_DE_TRABAJO = 5;
     
 
     public VacacionesDA() {
@@ -27,30 +29,16 @@ public class VacacionesDA {
     public javax.swing.table.DefaultTableModel getModelDataTable(boolean filtrado) {
 
         javax.swing.table.DefaultTableModel Model;//Creo la variable Model de tipo DefaultTableModel
-        if (filtrado) {
-            Model = new javax.swing.table.DefaultTableModel(//Le asigno el valor
-                    new Object[][]{},//Cargo las Filas vacias
-                    new String[]{"Nombre Completo", "Cedula", "Estado"});//Cargo los encabezados de la tabla
-        } else {
-            Model = new javax.swing.table.DefaultTableModel(//Le asigno el valor
-                    new Object[][]{},//Cargo las Filas vacias
-                    new String[]{"Nombre", "Primer Apellido", "Segundo Apellido", "Cedula", "Identificador", "Fecha de ingreso", "Estado"});//Cargo los encabezados de la tabla
-        }
+        Model = new javax.swing.table.DefaultTableModel(//Le asigno el valor
+                new Object[][]{},//Cargo las Filas vacias
+                new String[]{"ID", "Cedula", "Nombre Completo", "Area de Trabajo", "Fecha de Solicitud", "Cantidad de dias", "Fecha de Ingreso", "Estado"});//Cargo los encabezados de la tabla
         if (CapaDeDatos.CargarTXTDA.ListVacaciones != null) {//Pregunto si la lista se encuentra vacia
 
             for (Vacaciones itemFind : CapaDeDatos.CargarTXTDA.ListVacaciones) {
-                if (filtrado) {
-                    Model.addRow(//Agrego al model la fila
-                            new Object[]{
-                                getDatosEmpleado(itemFind.getCedulaEmpleado(),NOMBRE_COMPLETO_EMPLEADO),itemFind.getCedulaEmpleado(),getDatosEmpleado(itemFind.getCedulaEmpleado(),ESTADO_EMPLEADO)
-                            });
-                } else {
-                    Model.addRow(//Agrego al model la fila
-                            new Object[]{
-                                getDatosEmpleado(itemFind.getCedulaEmpleado(),NOMBRE_EMPLEADO),getDatosEmpleado(itemFind.getCedulaEmpleado(),APELLIDO_1_EMPLEADO),getDatosEmpleado(itemFind.getCedulaEmpleado(),APELLIDO_2_EMPLEADO),itemFind.getCedulaEmpleado(),itemFind.getIdVacaciones(),getFechaDeIngreso(itemFind),getDatosEmpleado(itemFind.getCedulaEmpleado(),ESTADO_EMPLEADO)
-                            });
-                }
-
+                Model.addRow(//Agrego al model la fila
+                        new Object[]{
+                            itemFind.getIdVacaciones(),itemFind.getCedulaEmpleado(),getDatosEmpleado(itemFind.getCedulaEmpleado(), NOMBRE_COMPLETO_EMPLEADO), getDatosEmpleado(itemFind.getCedulaEmpleado(), AREA_DE_TRABAJO),itemFind.getFechaSolicitud(),getFechaDeIngreso(itemFind),getEstadoWithBoolean(Boolean.parseBoolean(getDatosEmpleado(itemFind.getCedulaEmpleado(), ESTADO_EMPLEADO)))
+                        });
             }
         }
         return Model;
@@ -70,6 +58,8 @@ public class VacacionesDA {
                        return itemFind.getApellido2();
                    case 4:
                        return String.valueOf(itemFind.getEstado());
+                   case 5:
+                       return itemFind.getAreaDeTrabajo();
                }
            }
        }
@@ -88,8 +78,7 @@ public class VacacionesDA {
     }
     
     
-    public javax.swing.table.DefaultTableModel addEmpleado(Vacaciones vacaciones) {
-
+    public javax.swing.table.DefaultTableModel addVacaciones(Vacaciones vacaciones) {
         if (vacaciones != null) {
             CapaDeDatos.CargarTXTDA.ListVacaciones.add(vacaciones);
             return getModelDataTable(false);
@@ -114,5 +103,12 @@ public class VacacionesDA {
         }
         return getModelDataTable(false);
     }
-
+    
+    public String getEstadoWithBoolean(boolean estado){
+            if (estado) {
+                return "Activo";
+            }else{
+                return "Inactivo";
+            }
+        }
 }
